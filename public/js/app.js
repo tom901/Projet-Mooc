@@ -18977,8 +18977,6 @@ module.exports = require('./lib/React');
 },{"./lib/React":25}],157:[function(require,module,exports){
 "use strict";
 
-var React = require('react');
-
 module.exports = React.createClass({
     displayName: "exports",
 
@@ -18998,7 +18996,7 @@ module.exports = React.createClass({
                         React.createElement(
                             "a",
                             { className: "blog-nav-item active", target: "_blank", href: "https://twitter.com/ThomAiso" },
-                            "Mooc Projet"
+                            "Mooc-Projet"
                         )
                     )
                 )
@@ -19025,195 +19023,197 @@ module.exports = React.createClass({
     }
 });
 
-},{"react":156}],158:[function(require,module,exports){
-"use strict";
+},{}],158:[function(require,module,exports){
+'use strict';
 
+var React = require('react');
 var Header = require('./header.js');
+var TutorialForm = require('./tutorialForm.js');
 
 var TutorialAside = React.createClass({
-    displayName: "TutorialAside",
+    displayName: 'TutorialAside',
 
     render: function render() {
         return React.createElement(
-            "div",
+            'div',
             null,
             React.createElement(
-                "div",
-                { className: "sidebar-module sidebar-module-inset" },
+                'div',
+                { className: 'sidebar-module sidebar-module-inset' },
                 React.createElement(
-                    "h4",
+                    'h4',
                     null,
-                    "About"
+                    'About'
                 ),
                 React.createElement(
-                    "p",
+                    'p',
                     null,
-                    "Etiam porta ",
+                    'Etiam porta ',
                     React.createElement(
-                        "em",
+                        'em',
                         null,
-                        "sem malesuada magna"
+                        'sem malesuada magna'
                     ),
-                    " mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur."
+                    ' mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.'
                 )
             ),
             React.createElement(
-                "div",
-                { className: "sidebar-module" },
+                'div',
+                { className: 'sidebar-module' },
                 React.createElement(
-                    "h4",
+                    'h4',
                     null,
-                    "Archives"
+                    'Archives'
                 ),
                 React.createElement(
-                    "ol",
-                    { className: "list-unstyled" },
+                    'ol',
+                    { className: 'list-unstyled' },
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "March 2014"
+                            'a',
+                            { href: '#' },
+                            'March 2014'
                         )
                     ),
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "February 2014"
+                            'a',
+                            { href: '#' },
+                            'February 2014'
                         )
                     ),
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "January 2014"
+                            'a',
+                            { href: '#' },
+                            'January 2014'
                         )
                     ),
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "December 2013"
+                            'a',
+                            { href: '#' },
+                            'December 2013'
                         )
                     ),
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "November 2013"
+                            'a',
+                            { href: '#' },
+                            'November 2013'
                         )
                     ),
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "October 2013"
+                            'a',
+                            { href: '#' },
+                            'October 2013'
                         )
                     ),
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "September 2013"
+                            'a',
+                            { href: '#' },
+                            'September 2013'
                         )
                     ),
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "August 2013"
+                            'a',
+                            { href: '#' },
+                            'August 2013'
                         )
                     ),
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "July 2013"
+                            'a',
+                            { href: '#' },
+                            'July 2013'
                         )
                     ),
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "June 2013"
+                            'a',
+                            { href: '#' },
+                            'June 2013'
                         )
                     ),
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "May 2013"
+                            'a',
+                            { href: '#' },
+                            'May 2013'
                         )
                     ),
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "April 2013"
+                            'a',
+                            { href: '#' },
+                            'April 2013'
                         )
                     )
                 )
             ),
             React.createElement(
-                "div",
-                { className: "sidebar-module" },
+                'div',
+                { className: 'sidebar-module' },
                 React.createElement(
-                    "h4",
+                    'h4',
                     null,
-                    "Elsewhere"
+                    'Elsewhere'
                 ),
                 React.createElement(
-                    "ol",
-                    { className: "list-unstyled" },
+                    'ol',
+                    { className: 'list-unstyled' },
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "GitHub"
+                            'a',
+                            { href: '#' },
+                            'GitHub'
                         )
                     ),
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "Twitter"
+                            'a',
+                            { href: '#' },
+                            'Twitter'
                         )
                     ),
                     React.createElement(
-                        "li",
+                        'li',
                         null,
                         React.createElement(
-                            "a",
-                            { href: "#" },
-                            "Facebook"
+                            'a',
+                            { href: '#' },
+                            'Facebook'
                         )
                     )
                 )
@@ -19223,7 +19223,7 @@ var TutorialAside = React.createClass({
 });
 
 var TutorialBox = React.createClass({
-    displayName: "TutorialBox",
+    displayName: 'TutorialBox',
 
     loadCommentsFromServer: function loadCommentsFromServer() {
         $.ajax({
@@ -19264,27 +19264,27 @@ var TutorialBox = React.createClass({
     },
     render: function render() {
         return React.createElement(
-            "div",
-            { className: "tutorialBox" },
+            'div',
+            { className: 'tutorialBox' },
             React.createElement(Header, null),
             React.createElement(
-                "div",
-                { className: "tutorial" },
+                'div',
+                { className: 'tutorial' },
                 React.createElement(
-                    "div",
-                    { className: "container" },
+                    'div',
+                    { className: 'container' },
                     React.createElement(
-                        "div",
-                        { className: "row" },
+                        'div',
+                        { className: 'row' },
                         React.createElement(
-                            "div",
-                            { className: "col-sm-8 blog-main" },
+                            'div',
+                            { className: 'col-sm-8 blog-main' },
                             React.createElement(TutorialList, { data: this.state.data }),
                             React.createElement(TutorialForm, { onTutorialSubmit: this.handleTutorialSubmit })
                         ),
                         React.createElement(
-                            "div",
-                            { className: "col-sm-3 col-sm-offset-1 blog-sidebar" },
+                            'div',
+                            { className: 'col-sm-3 col-sm-offset-1 blog-sidebar' },
                             React.createElement(TutorialAside, null)
                         )
                     )
@@ -19295,7 +19295,7 @@ var TutorialBox = React.createClass({
 });
 
 var TutorialList = React.createClass({
-    displayName: "TutorialList",
+    displayName: 'TutorialList',
 
     render: function render() {
         var tutorialNodes = this.props.data.map(function (tutorial, index) {
@@ -19306,14 +19306,14 @@ var TutorialList = React.createClass({
             );
         });
         return React.createElement(
-            "div",
-            { className: "tutorialList" },
+            'div',
+            { className: 'tutorialList' },
             tutorialNodes
         );
     }
 });
 var Tutorial = React.createClass({
-    displayName: "Tutorial",
+    displayName: 'Tutorial',
 
     rawMarkup: function rawMarkup() {
         var rawMarkup = marked(this.props.children.toString(), { sanitize: true });
@@ -19322,23 +19322,23 @@ var Tutorial = React.createClass({
 
     render: function render() {
         return React.createElement(
-            "div",
-            { className: "blog-post" },
+            'div',
+            { className: 'blog-post' },
             React.createElement(
-                "h2",
-                { className: "blog-post-title tutorialAuthor" },
+                'h2',
+                { className: 'blog-post-title tutorialAuthor' },
                 this.props.titleTuto
             ),
-            React.createElement("span", { dangerouslySetInnerHTML: this.rawMarkup() }),
+            React.createElement('span', { dangerouslySetInnerHTML: this.rawMarkup() }),
             React.createElement(
-                "p",
-                { className: "blog-post-meta" },
-                " ",
+                'p',
+                { className: 'blog-post-meta' },
+                ' ',
                 this.props.dateTuto,
-                " par ",
+                ' par ',
                 React.createElement(
-                    "a",
-                    { href: "#" },
+                    'a',
+                    { href: '#' },
                     this.props.author
                 )
             )
@@ -19346,8 +19346,53 @@ var Tutorial = React.createClass({
     }
 });
 
-var TutorialForm = React.createClass({
-    displayName: "TutorialForm",
+// var TutorialForm = React.createClass({
+//     dateToday : function(){
+//         var now = new Date();
+//         var year   = now.getFullYear();
+//         var month    = now.getMonth() + 1;
+//         var day    = now.getDate();
+//         var hour   = now.getHours();
+//         var minute  = now.getMinutes();
+//         var seconde = now.getSeconds();
+
+//         return 'Le '+day+'-'+month+'-'+year+' à '+hour+':'+minute+':'+seconde ;
+//     },
+
+//     handleSubmit: function(e) {
+//         e.preventDefault();
+//         var author = this.refs.author.value.trim();
+//         var text = this.refs.text.value.trim();
+//         var titleTuto = this.refs.titleTuto.value.trim();
+//         var dateToday = this.dateToday();
+//         if (!text || !author || !titleTuto) {
+//           return;
+//       }
+//       this.props.onTutorialSubmit({author: author, text: text, titleTuto : titleTuto, dateTuto : dateToday});
+//       this.refs.author.value = '';
+//       this.refs.text.value = '';
+//     },
+//     render: function() {
+//         return (
+//             <div className="container">
+//                 <form className="tutorialForm" onSubmit={this.handleSubmit}>
+//                     <input className="form-control" type="text" placeholder="Auteur tuto" ref="author" />
+//                     <input className="form-control" type="text" placeholder="Titre tuto" ref="titleTuto" />
+//                     <input className="form-control" type="text" placeholder="Text tuto..." ref="text" />
+//                     <input className="form-control" type="submit" value="Post" />
+//                 </form>
+//             </div>
+//     );
+//     }
+// });
+
+ReactDOM.render(React.createElement(TutorialBox, { url: '/api/tutorials', pollInterval: 2000 }), document.getElementById('content'));
+
+},{"./header.js":157,"./tutorialForm.js":159,"react":156}],159:[function(require,module,exports){
+'use strict';
+
+module.exports = React.createClass({
+    displayName: 'exports',
 
     dateToday: function dateToday() {
         var now = new Date();
@@ -19376,20 +19421,18 @@ var TutorialForm = React.createClass({
     },
     render: function render() {
         return React.createElement(
-            "div",
-            { className: "container" },
+            'div',
+            { className: 'container' },
             React.createElement(
-                "form",
-                { className: "tutorialForm", onSubmit: this.handleSubmit },
-                React.createElement("input", { className: "form-control", type: "text", placeholder: "Auteur tuto", ref: "author" }),
-                React.createElement("input", { className: "form-control", type: "text", placeholder: "Titre tuto", ref: "titleTuto" }),
-                React.createElement("input", { className: "form-control", type: "text", placeholder: "Text tuto...", ref: "text" }),
-                React.createElement("input", { className: "form-control", type: "submit", value: "Post" })
+                'form',
+                { className: 'tutorialForm', onSubmit: this.handleSubmit },
+                React.createElement('input', { className: 'form-control', type: 'text', placeholder: 'Auteur tuto', ref: 'author' }),
+                React.createElement('input', { className: 'form-control', type: 'text', placeholder: 'Titre tuto', ref: 'titleTuto' }),
+                React.createElement('input', { className: 'form-control', type: 'text', placeholder: 'Text tuto...', ref: 'text' }),
+                React.createElement('input', { className: 'form-control', type: 'submit', value: 'Post' })
             )
         );
     }
 });
 
-ReactDOM.render(React.createElement(TutorialBox, { url: "/api/tutorials", pollInterval: 2000 }), document.getElementById('content'));
-
-},{"./header.js":157}]},{},[158]);
+},{}]},{},[158]);

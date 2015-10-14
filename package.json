@@ -22,20 +22,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/reactjs/react-tutorial.git"
+    "url": "https://github.com/tom901/Projet-Mooc.git"
   },
   "keywords": [
     "react",
-    "tutorial",
+    "Mooc",
     "comment",
     "example"
   ],
-  "author": "petehunt",
-  "bugs": {
-    "url": "https://github.com/reactjs/react-tutorial/issues"
-  },
-  "homepage": "https://github.com/reactjs/react-tutorial",
-  "engines": {
-    "node": "0.12.x"
-  }
+  "author": "Vicky, Leslie, Thomas, Alex-Maxime, Brian"
 }
