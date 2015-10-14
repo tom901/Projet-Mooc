@@ -1,7 +1,7 @@
 /*
 * Projet scolaire : Serveur pour le MOOC
 *
-* Equipe projet : Leslie Charente, Vicky Poummier, Brian Benoit, Alex-Maxime Cadeval ,Thomas Paraiso 
+* Equipe projet : Leslie Charente, Vicky Poummier, Brian Benoit, Alex-Maxime Cadeval ,Thomas Paraiso
 * Description : server pour faire la redirection vers les pages du front
 *
 */
@@ -14,6 +14,7 @@ var app = express();
 app.set('port', (process.env.PORT || 3000));
 
 app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/asset', express.static(path.join(__dirname, 'bower_components')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
