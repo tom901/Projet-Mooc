@@ -1,12 +1,35 @@
 {
-  "name": "SiteTuto",
-  "version": "0.0.0",
+  "name": "Projet-Mooc",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tom901/Projet-Mooc",
   "authors": [
-    "tom9010 <thomas.paraiso@me.com>"
+    "Alex Maxime <cad.maxime@gmail.com>",
+    "Thomas PARAISO <thomas.paraiso@me.com>",
+    "Leslie CHARENTE <ton mail>",
+    "... BRIAN <ton mail>",
+    "Vicky POUMIER <ton mail>"
   ],
-  "description": "Page de tutoriel reactJS (Entrainement)",
+  "description": "Client MOOC pour CodeGradX en React.JS",
+  "main": "server.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "React",
+    "JS"
+  ],
   "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "react": "~0.14.0"
   }
 }
