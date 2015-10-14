@@ -1,0 +1,12 @@
+{
+  "name": "SiteTuto",
+  "version": "0.0.0",
+  "authors": [
+    "tom9010 <thomas.paraiso@me.com>"
+  ],
+  "description": "Page de tutoriel reactJS (Entrainement)",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
