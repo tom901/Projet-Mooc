@@ -1,6 +1,5 @@
 /*
 * Projet scolaire : Serveur pour le MOOC
-*
 * Equipe projet : Leslie Charente, Vicky Poummier, Brian Benoit, Alex-Maxime Cadeval ,Thomas Paraiso
 * Description : server pour faire la redirection vers les pages du front
 *
