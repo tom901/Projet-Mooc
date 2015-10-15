@@ -19003,12 +19003,6 @@ var Menu = require('./menu.js');
 var TutorialForm = require('./tutorialForm.js');
 
 /**
- * [ProfilEdit : Chargement Du formulaire pour l'edition du profil]
- * @type {ReactClass}
- */
-var ProfilEdit = require('./profil-edit.js');
-
-/**
  * [TutorialAside : Aside Zone]
  * @return {ReactClass}
  */
@@ -19253,7 +19247,6 @@ var TutorialBox = React.createClass({
       'div',
       { className: 'tutorialBox' },
       React.createElement(Menu, null),
-      React.createElement(ProfilEdit, null),
       React.createElement(
         'div',
         { className: 'tutorial' },
@@ -19344,7 +19337,7 @@ var Tutorial = React.createClass({
 
 ReactDOM.render(React.createElement(TutorialBox, { url: '/api/tutorials', pollInterval: 2000 }), document.getElementById('content'));
 
-},{"./menu.js":158,"./profil-edit.js":159,"./tutorialForm.js":160,"react":156}],158:[function(require,module,exports){
+},{"./menu.js":158,"./tutorialForm.js":159,"react":156}],158:[function(require,module,exports){
 "use strict";
 
 module.exports = React.createClass({
@@ -19475,245 +19468,6 @@ module.exports = React.createClass({
 });
 
 },{}],159:[function(require,module,exports){
-"use strict";
-
-module.exports = React.createClass({
-  displayName: "exports",
-
-  render: function render() {
-    return React.createElement(
-      "div",
-      { className: "container" },
-      React.createElement(
-        "h1",
-        null,
-        "Edition du Profil"
-      ),
-      React.createElement(
-        "div",
-        { className: "row" },
-        React.createElement(
-          "div",
-          { className: "col-md-3" },
-          React.createElement(
-            "div",
-            { className: "text-center" },
-            React.createElement("img", { src: "//placehold.it/100", className: "avatar img-circle", alt: "avatar" }),
-            React.createElement(
-              "h6",
-              null,
-              "Upload a different photo..."
-            ),
-            React.createElement("input", { type: "file", className: "form-control" })
-          )
-        ),
-        React.createElement(
-          "div",
-          { className: "col-md-9 personal-info" },
-          React.createElement(
-            "div",
-            { className: "alert alert-info alert-dismissable" },
-            React.createElement(
-              "a",
-              { className: "panel-close close", "data-dismiss": "alert" },
-              "×"
-            ),
-            React.createElement("i", { className: "fa fa-coffee" }),
-            "This is an ",
-            React.createElement(
-              "strong",
-              null,
-              ".alert"
-            ),
-            "Use this to show important messages to the user."
-          ),
-          React.createElement(
-            "h3",
-            null,
-            "Personal info"
-          ),
-          React.createElement(
-            "form",
-            { className: "form-horizontal tutorialForm", role: "form", onSubmit: this.handleSubmit },
-            React.createElement(
-              "div",
-              { className: "form-group" },
-              React.createElement(
-                "label",
-                { className: "col-lg-3 control-label" },
-                "First name:"
-              ),
-              React.createElement(
-                "div",
-                { className: "col-lg-8" },
-                React.createElement("input", { className: "form-control", type: "text", value: "Jane" })
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "form-group" },
-              React.createElement(
-                "label",
-                { className: "col-lg-3 control-label" },
-                "Last name:"
-              ),
-              React.createElement(
-                "div",
-                { className: "col-lg-8" },
-                React.createElement("input", { className: "form-control", type: "text", value: "Bishop" })
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "form-group" },
-              React.createElement(
-                "label",
-                { className: "col-lg-3 control-label" },
-                "Company:"
-              ),
-              React.createElement(
-                "div",
-                { className: "col-lg-8" },
-                React.createElement("input", { className: "form-control", type: "text", value: "" })
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "form-group" },
-              React.createElement(
-                "label",
-                { className: "col-lg-3 control-label" },
-                "Email:"
-              ),
-              React.createElement(
-                "div",
-                { className: "col-lg-8" },
-                React.createElement("input", { className: "form-control", type: "text", value: "janesemail@gmail.com" })
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "form-group" },
-              React.createElement(
-                "label",
-                { className: "col-lg-3 control-label" },
-                "Time Zone:"
-              ),
-              React.createElement(
-                "div",
-                { className: "col-lg-8" },
-                React.createElement(
-                  "div",
-                  { className: "ui-select" },
-                  React.createElement(
-                    "select",
-                    { id: "user_time_zone", className: "form-control" },
-                    React.createElement(
-                      "option",
-                      { value: "Hawaii" },
-                      "(GMT-10:00) Hawaii"
-                    ),
-                    React.createElement(
-                      "option",
-                      { value: "Alaska" },
-                      "(GMT-09:00) Alaska"
-                    ),
-                    React.createElement(
-                      "option",
-                      { value: "Pacific Time (US & Canada)" },
-                      "(GMT-08:00) Pacific Time (US & Canada)"
-                    ),
-                    React.createElement(
-                      "option",
-                      { value: "Arizona" },
-                      "(GMT-07:00) Arizona"
-                    ),
-                    React.createElement(
-                      "option",
-                      { value: "Mountain Time (US & Canada)" },
-                      "(GMT-07:00) Mountain Time (US & Canada)"
-                    ),
-                    React.createElement(
-                      "option",
-                      { value: "Central Time (US & Canada)", selected: "selected" },
-                      "(GMT-06:00) Central Time (US & Canada)"
-                    ),
-                    React.createElement(
-                      "option",
-                      { value: "Eastern Time (US & Canada)" },
-                      "(GMT-05:00) Eastern Time (US & Canada)"
-                    ),
-                    React.createElement(
-                      "option",
-                      { value: "Indiana (East)" },
-                      "(GMT-05:00) Indiana (East)"
-                    )
-                  )
-                )
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "form-group" },
-              React.createElement(
-                "label",
-                { className: "col-md-3 control-label" },
-                "Username:"
-              ),
-              React.createElement(
-                "div",
-                { className: "col-md-8" },
-                React.createElement("input", { className: "form-control", type: "text", value: "janeuser" })
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "form-group" },
-              React.createElement(
-                "label",
-                { className: "col-md-3 control-label" },
-                "Password:"
-              ),
-              React.createElement(
-                "div",
-                { className: "col-md-8" },
-                React.createElement("input", { className: "form-control", type: "password", value: "11111122333" })
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "form-group" },
-              React.createElement(
-                "label",
-                { className: "col-md-3 control-label" },
-                "Confirm password:"
-              ),
-              React.createElement(
-                "div",
-                { className: "col-md-8" },
-                React.createElement("input", { className: "form-control", type: "password", value: "11111122333" })
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "form-group" },
-              React.createElement("label", { className: "col-md-3 control-label" }),
-              React.createElement(
-                "div",
-                { className: "col-md-8" },
-                React.createElement("input", { type: "button", className: "btn btn-primary", value: "Save Changes" }),
-                React.createElement("span", null),
-                React.createElement("input", { type: "reset", className: "btn btn-default", value: "Cancel" })
-              )
-            )
-          )
-        )
-      )
-    );
-  }
-});
-
-},{}],160:[function(require,module,exports){
 'use strict';
 
 module.exports = React.createClass({
