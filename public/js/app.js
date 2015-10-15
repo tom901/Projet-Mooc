@@ -18975,62 +18975,12 @@ module.exports = warning;
 module.exports = require('./lib/React');
 
 },{"./lib/React":25}],157:[function(require,module,exports){
-<<<<<<< HEAD
-"use strict";
-
-module.exports = React.createClass({
-    displayName: "exports",
-
-    render: function render() {
-        return React.createElement(
-            "div",
-            { className: "headerComponent" },
-            React.createElement(
-                "div",
-                { className: "blog-masthead" },
-                React.createElement(
-                    "div",
-                    { className: "container" },
-                    React.createElement(
-                        "nav",
-                        { className: "blog-nav" },
-                        React.createElement(
-                            "a",
-                            { className: "blog-nav-item active", target: "_blank", href: "https://twitter.com/ThomAiso" },
-                            "Projet --  Moooc"
-                        )
-                    )
-                )
-            ),
-            React.createElement(
-                "div",
-                { className: "container" },
-                React.createElement(
-                    "div",
-                    { className: "blog-header" },
-                    React.createElement(
-                        "h1",
-                        { className: "blog-title" },
-                        "Liste de tutoriels"
-                    ),
-                    React.createElement(
-                        "p",
-                        { className: "lead blog-description" },
-                        "Tutoriels sur différents sujets concernant Salesforce, Javascript et les nouveaux utilitaires existants."
-                    )
-                )
-            )
-        );
-    }
-});
-=======
 /**
  * Application logic
  * =================
  * Ce fichier contiendra toute la logique 
  * metier que l'on souhaite appliquer
  */
->>>>>>> d840c1a6283789d2b58f61aa1dd3a02f1f365e2e
 
 /**
  * [React : Chargement de la librairie React pour utilisation]
@@ -19385,50 +19335,6 @@ var Tutorial = React.createClass({
   }
 });
 
-<<<<<<< HEAD
-=======
-// var TutorialForm = React.createClass({
-//     dateToday : function(){
-//         var now = new Date();
-//         var year   = now.getFullYear();
-//         var month    = now.getMonth() + 1;
-//         var day    = now.getDate();
-//         var hour   = now.getHours();
-//         var minute  = now.getMinutes();
-//         var seconde = now.getSeconds();
-
-//         return 'Le '+day+'-'+month+'-'+year+' à '+hour+':'+minute+':'+seconde ;
-//     },
-
-//     handleSubmit: function(e) {
-//         e.preventDefault();
-//         var author = this.refs.author.value.trim();
-//         var text = this.refs.text.value.trim();
-//         var titleTuto = this.refs.titleTuto.value.trim();
-//         var dateToday = this.dateToday();
-//         if (!text || !author || !titleTuto) {
-//           return;
-//       }
-//       this.props.onTutorialSubmit({author: author, text: text, titleTuto : titleTuto, dateTuto : dateToday});
-//       this.refs.author.value = '';
-//       this.refs.text.value = '';
-//     },
-//     render: function() {
-//         return (
-//             <div className="container">
-//                 <form className="tutorialForm" onSubmit={this.handleSubmit}>
-//                     <input className="form-control" type="text" placeholder="Auteur tuto" ref="author" />
-//                     <input className="form-control" type="text" placeholder="Titre tuto" ref="titleTuto" />
-//                     <input className="form-control" type="text" placeholder="Text tuto..." ref="text" />
-//                     <input className="form-control" type="submit" value="Post" />
-//                 </form>
-//             </div>
-//     );
-//     }
-// });
-
-//Rendu
->>>>>>> d840c1a6283789d2b58f61aa1dd3a02f1f365e2e
 ReactDOM.render(React.createElement(TutorialBox, { url: '/api/tutorials', pollInterval: 2000 }), document.getElementById('content'));
 
 },{"./menu.js":158,"./tutorialForm.js":159,"react":156}],158:[function(require,module,exports){

@@ -41,7 +41,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['express',
+  grunt.registerTask('default', ['express','browserify',
     'watch'
     ]);
 };
