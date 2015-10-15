@@ -18,7 +18,7 @@ module.exports = function(grunt) {
       } 
     }
   },
-
+  
   express : {
     dev: {
       options: {
@@ -37,6 +37,8 @@ module.exports = function(grunt) {
     }
   }
 });
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-jsxhint');
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -44,4 +46,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['express','browserify',
     'watch'
     ]);
+  
 };
