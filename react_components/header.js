@@ -5,7 +5,7 @@ module.exports  = React.createClass({
             <div className="blog-masthead">
               <div className="container">
                 <nav className="blog-nav">
-                  <a className="blog-nav-item active" target="_blank" href="https://twitter.com/ThomAiso">Mooc Projet</a>
+                  <a className="blog-nav-item active" target="_blank" href="https://twitter.com/ThomAiso">Projet --  Moooc</a>
                 </nav>
               </div>
             </div>
