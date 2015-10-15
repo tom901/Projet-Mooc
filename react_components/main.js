@@ -12,10 +12,10 @@
 var React = require('react');
 
 /**
- * [Header : Chargement du composant Header]
+ * [Menu : Chargement du composant Menu]
  * @type {ReactClass}
  */
-var Header = require('./header.js');
+var Menu = require('./menu.js');
 
 /**
  * [TutorialForm : Chargement Du formulaire]
@@ -115,7 +115,7 @@ var TutorialBox = React.createClass({
   render: function() {
     return (
       <div className="tutorialBox">
-        <Header />
+        <Menu />
         <div className="tutorial">
           <div className="container">
             <div className="row">

@@ -18975,55 +18975,6 @@ module.exports = warning;
 module.exports = require('./lib/React');
 
 },{"./lib/React":25}],157:[function(require,module,exports){
-"use strict";
-
-module.exports = React.createClass({
-    displayName: "exports",
-
-    render: function render() {
-        return React.createElement(
-            "div",
-            { className: "headerComponent" },
-            React.createElement(
-                "div",
-                { className: "blog-masthead" },
-                React.createElement(
-                    "div",
-                    { className: "container" },
-                    React.createElement(
-                        "nav",
-                        { className: "blog-nav" },
-                        React.createElement(
-                            "a",
-                            { className: "blog-nav-item active", target: "_blank", href: "https://twitter.com/ThomAiso" },
-                            "Mooc Projet"
-                        )
-                    )
-                )
-            ),
-            React.createElement(
-                "div",
-                { className: "container" },
-                React.createElement(
-                    "div",
-                    { className: "blog-header" },
-                    React.createElement(
-                        "h1",
-                        { className: "blog-title" },
-                        "Liste de tutoriels"
-                    ),
-                    React.createElement(
-                        "p",
-                        { className: "lead blog-description" },
-                        "Tutoriels sur différents sujets concernant Salesforce, Javascript et les nouveaux utilitaires existants."
-                    )
-                )
-            )
-        );
-    }
-});
-
-},{}],158:[function(require,module,exports){
 /**
  * Application logic
  * =================
@@ -19040,10 +18991,10 @@ module.exports = React.createClass({
 var React = require('react');
 
 /**
- * [Header : Chargement du composant Header]
+ * [Menu : Chargement du composant Menu]
  * @type {ReactClass}
  */
-var Header = require('./header.js');
+var Menu = require('./menu.js');
 
 /**
  * [TutorialForm : Chargement Du formulaire]
@@ -19295,7 +19246,7 @@ var TutorialBox = React.createClass({
     return React.createElement(
       'div',
       { className: 'tutorialBox' },
-      React.createElement(Header, null),
+      React.createElement(Menu, null),
       React.createElement(
         'div',
         { className: 'tutorial' },
@@ -19427,7 +19378,137 @@ var Tutorial = React.createClass({
 //Rendu
 ReactDOM.render(React.createElement(TutorialBox, { url: '/api/tutorials', pollInterval: 2000 }), document.getElementById('content'));
 
-},{"./header.js":157,"./tutorialForm.js":159,"react":156}],159:[function(require,module,exports){
+},{"./menu.js":158,"./tutorialForm.js":159,"react":156}],158:[function(require,module,exports){
+"use strict";
+
+module.exports = React.createClass({
+  displayName: "exports",
+
+  render: function render() {
+    return React.createElement(
+      "nav",
+      { className: "navbar navbar-inverse navbar-static-top" },
+      React.createElement(
+        "div",
+        { className: "container" },
+        React.createElement(
+          "div",
+          { className: "navbar-header" },
+          React.createElement(
+            "button",
+            { type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#navbar", "aria-expanded": "false", "aria-controls": "navbar" },
+            React.createElement(
+              "span",
+              { className: "sr-only" },
+              "Toggle navigation"
+            ),
+            React.createElement("span", { className: "icon-bar" }),
+            React.createElement("span", { className: "icon-bar" }),
+            React.createElement("span", { className: "icon-bar" })
+          ),
+          React.createElement(
+            "a",
+            { className: "navbar-brand", href: "#" },
+            "Cours"
+          )
+        ),
+        React.createElement(
+          "div",
+          { id: "navbar", className: "navbar-collapse collapse" },
+          React.createElement(
+            "ul",
+            { className: "nav navbar-nav" },
+            React.createElement(
+              "li",
+              { className: "active" },
+              React.createElement(
+                "a",
+                { href: "#" },
+                "Home"
+              )
+            ),
+            React.createElement(
+              "li",
+              { className: "dropdown" },
+              React.createElement(
+                "a",
+                { href: "#", className: "dropdown-toggle", "data-toggle": "dropdown", role: "button", "aria-haspopup": "true", "aria-expanded": "false" },
+                "Exercices ",
+                React.createElement("span", { className: "caret" })
+              ),
+              React.createElement(
+                "ul",
+                { className: "dropdown-menu" },
+                React.createElement(
+                  "li",
+                  null,
+                  React.createElement(
+                    "a",
+                    { href: "#" },
+                    "Consulter les exercices"
+                  )
+                ),
+                React.createElement(
+                  "li",
+                  null,
+                  React.createElement(
+                    "a",
+                    { href: "#" },
+                    "Consulter les corrections"
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              "li",
+              null,
+              React.createElement(
+                "a",
+                { href: "#contact" },
+                "Historique"
+              )
+            ),
+            React.createElement(
+              "li",
+              { className: "dropdown" },
+              React.createElement(
+                "a",
+                { href: "#", className: "dropdown-toggle", "data-toggle": "dropdown", role: "button", "aria-haspopup": "true", "aria-expanded": "false" },
+                "Profil ",
+                React.createElement("span", { className: "caret" })
+              ),
+              React.createElement(
+                "ul",
+                { className: "dropdown-menu" },
+                React.createElement(
+                  "li",
+                  null,
+                  React.createElement(
+                    "a",
+                    { href: "#" },
+                    "Modifier mon profil"
+                  )
+                ),
+                React.createElement("li", { role: "separator", className: "divider" }),
+                React.createElement(
+                  "li",
+                  null,
+                  React.createElement(
+                    "a",
+                    { href: "#" },
+                    "Déconnexion"
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+},{}],159:[function(require,module,exports){
 'use strict';
 
 module.exports = React.createClass({
@@ -19474,4 +19555,4 @@ module.exports = React.createClass({
     }
 });
 
-},{}]},{},[158]);
+},{}]},{},[157]);
