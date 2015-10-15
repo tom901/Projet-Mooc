@@ -18,11 +18,11 @@ module.exports = React.createClass({
         var titleTuto = this.refs.titleTuto.value.trim();
         var dateToday = this.dateToday();
         if (!text || !author || !titleTuto) {
-          return;
-      }
-      this.props.onTutorialSubmit({author: author, text: text, titleTuto : titleTuto, dateTuto : dateToday});
-      this.refs.author.value = '';
-      this.refs.text.value = '';
+            return;
+        }
+        this.props.onTutorialSubmit({author: author, text: text, titleTuto : titleTuto, dateTuto : dateToday});
+        this.refs.author.value = '';
+        this.refs.text.value = '';
     },
     render: function() {
         return (
@@ -34,6 +34,6 @@ module.exports = React.createClass({
                     <input className="form-control" type="submit" value="Post" />
                 </form>
             </div>
-    );
+        );
     }
 });
