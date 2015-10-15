@@ -18996,7 +18996,7 @@ module.exports = React.createClass({
                         React.createElement(
                             "a",
                             { className: "blog-nav-item active", target: "_blank", href: "https://twitter.com/ThomAiso" },
-                            "Mooc-Projet"
+                            "Mooc Projet"
                         )
                     )
                 )
@@ -19024,326 +19024,364 @@ module.exports = React.createClass({
 });
 
 },{}],158:[function(require,module,exports){
+/**
+ * Application logic
+ * =================
+ * Ce fichier contiendra toute la logique 
+ * metier que l'on souhaite appliquer
+ */
+
+/**
+ * [React : Chargement de la librairie React pour utilisation]
+ * @type {React}
+ */
 'use strict';
 
 var React = require('react');
+
+/**
+ * [Header : Chargement du composant Header]
+ * @type {ReactClass}
+ */
 var Header = require('./header.js');
+
+/**
+ * [TutorialForm : Chargement Du formulaire]
+ * @type {ReactClass}
+ */
 var TutorialForm = require('./tutorialForm.js');
 
+/**
+ * [TutorialAside : Aside Zone]
+ * @return {ReactClass}
+ */
 var TutorialAside = React.createClass({
-    displayName: 'TutorialAside',
+  displayName: 'TutorialAside',
 
-    render: function render() {
-        return React.createElement(
-            'div',
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'div',
+        { className: 'sidebar-module sidebar-module-inset' },
+        React.createElement(
+          'h4',
+          null,
+          'About'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'Etiam porta ',
+          React.createElement(
+            'em',
+            null,
+            'sem malesuada magna'
+          ),
+          ' mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.'
+        )
+      ),
+      React.createElement(
+        'div',
+        { className: 'sidebar-module' },
+        React.createElement(
+          'h4',
+          null,
+          'Archives'
+        ),
+        React.createElement(
+          'ol',
+          { className: 'list-unstyled' },
+          React.createElement(
+            'li',
             null,
             React.createElement(
-                'div',
-                { className: 'sidebar-module sidebar-module-inset' },
-                React.createElement(
-                    'h4',
-                    null,
-                    'About'
-                ),
-                React.createElement(
-                    'p',
-                    null,
-                    'Etiam porta ',
-                    React.createElement(
-                        'em',
-                        null,
-                        'sem malesuada magna'
-                    ),
-                    ' mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.'
-                )
-            ),
-            React.createElement(
-                'div',
-                { className: 'sidebar-module' },
-                React.createElement(
-                    'h4',
-                    null,
-                    'Archives'
-                ),
-                React.createElement(
-                    'ol',
-                    { className: 'list-unstyled' },
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'March 2014'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'February 2014'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'January 2014'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'December 2013'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'November 2013'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'October 2013'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'September 2013'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'August 2013'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'July 2013'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'June 2013'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'May 2013'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'April 2013'
-                        )
-                    )
-                )
-            ),
-            React.createElement(
-                'div',
-                { className: 'sidebar-module' },
-                React.createElement(
-                    'h4',
-                    null,
-                    'Elsewhere'
-                ),
-                React.createElement(
-                    'ol',
-                    { className: 'list-unstyled' },
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'GitHub'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'Twitter'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            'Facebook'
-                        )
-                    )
-                )
+              'a',
+              { href: '#' },
+              'March 2014'
             )
-        );
-    }
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              'February 2014'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              'January 2014'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              'December 2013'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              'November 2013'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              'October 2013'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              'September 2013'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              'August 2013'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              'July 2013'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              'June 2013'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              'May 2013'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              'April 2013'
+            )
+          )
+        )
+      ),
+      React.createElement(
+        'div',
+        { className: 'sidebar-module' },
+        React.createElement(
+          'h4',
+          null,
+          'Elsewhere'
+        ),
+        React.createElement(
+          'ol',
+          { className: 'list-unstyled' },
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              'GitHub'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              'Twitter'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              'Facebook'
+            )
+          )
+        )
+      )
+    );
+  }
 });
 
+/**
+ * [TutorialBox : Box tutoriel]
+ * @return {ReactClass}
+ */
 var TutorialBox = React.createClass({
-    displayName: 'TutorialBox',
+  displayName: 'TutorialBox',
 
-    loadCommentsFromServer: function loadCommentsFromServer() {
-        $.ajax({
-            url: this.props.url,
-            dataType: 'json',
-            cache: false,
-            success: (function (data) {
-                this.setState({ data: data });
-            }).bind(this),
-            error: (function (xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
-            }).bind(this)
-        });
-    },
-    handleTutorialSubmit: function handleTutorialSubmit(tutorial) {
-        var tutorials = this.state.data;
-        var newTutorials = tutorials.concat([tutorial]);
-        this.setState({ data: newTutorials });
-        $.ajax({
-            url: this.props.url,
-            dataType: 'json',
-            type: 'POST',
-            data: tutorial,
-            success: (function (data) {
-                this.setState({ data: data });
-            }).bind(this),
-            error: (function (xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
-            }).bind(this)
-        });
-    },
-    getInitialState: function getInitialState() {
-        return { data: [] };
-    },
-    componentDidMount: function componentDidMount() {
-        this.loadCommentsFromServer();
-        setInterval(this.loadCommentsFromServer, this.props.pollInterval);
-    },
-    render: function render() {
-        return React.createElement(
+  loadCommentsFromServer: function loadCommentsFromServer() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      cache: false,
+      success: (function (data) {
+        this.setState({ data: data });
+      }).bind(this),
+      error: (function (xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }).bind(this)
+    });
+  },
+  handleTutorialSubmit: function handleTutorialSubmit(tutorial) {
+    var tutorials = this.state.data;
+    var newTutorials = tutorials.concat([tutorial]);
+    this.setState({ data: newTutorials });
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      type: 'POST',
+      data: tutorial,
+      success: (function (data) {
+        this.setState({ data: data });
+      }).bind(this),
+      error: (function (xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }).bind(this)
+    });
+  },
+  getInitialState: function getInitialState() {
+    return { data: [] };
+  },
+  componentDidMount: function componentDidMount() {
+    this.loadCommentsFromServer();
+    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+  },
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'tutorialBox' },
+      React.createElement(Header, null),
+      React.createElement(
+        'div',
+        { className: 'tutorial' },
+        React.createElement(
+          'div',
+          { className: 'container' },
+          React.createElement(
             'div',
-            { className: 'tutorialBox' },
-            React.createElement(Header, null),
+            { className: 'row' },
             React.createElement(
-                'div',
-                { className: 'tutorial' },
-                React.createElement(
-                    'div',
-                    { className: 'container' },
-                    React.createElement(
-                        'div',
-                        { className: 'row' },
-                        React.createElement(
-                            'div',
-                            { className: 'col-sm-8 blog-main' },
-                            React.createElement(TutorialList, { data: this.state.data }),
-                            React.createElement(TutorialForm, { onTutorialSubmit: this.handleTutorialSubmit })
-                        ),
-                        React.createElement(
-                            'div',
-                            { className: 'col-sm-3 col-sm-offset-1 blog-sidebar' },
-                            React.createElement(TutorialAside, null)
-                        )
-                    )
-                )
-            )
-        );
-    }
-});
-
-var TutorialList = React.createClass({
-    displayName: 'TutorialList',
-
-    render: function render() {
-        var tutorialNodes = this.props.data.map(function (tutorial, index) {
-            return React.createElement(
-                Tutorial,
-                { author: tutorial.author, titleTuto: tutorial.titleTuto, dateTuto: tutorial.dateTuto, key: index },
-                tutorial.text
-            );
-        });
-        return React.createElement(
-            'div',
-            { className: 'tutorialList' },
-            tutorialNodes
-        );
-    }
-});
-var Tutorial = React.createClass({
-    displayName: 'Tutorial',
-
-    rawMarkup: function rawMarkup() {
-        var rawMarkup = marked(this.props.children.toString(), { sanitize: true });
-        return { __html: rawMarkup };
-    },
-
-    render: function render() {
-        return React.createElement(
-            'div',
-            { className: 'blog-post' },
-            React.createElement(
-                'h2',
-                { className: 'blog-post-title tutorialAuthor' },
-                this.props.titleTuto
+              'div',
+              { className: 'col-sm-8 blog-main' },
+              React.createElement(TutorialList, { data: this.state.data }),
+              React.createElement(TutorialForm, { onTutorialSubmit: this.handleTutorialSubmit })
             ),
-            React.createElement('span', { dangerouslySetInnerHTML: this.rawMarkup() }),
             React.createElement(
-                'p',
-                { className: 'blog-post-meta' },
-                ' ',
-                this.props.dateTuto,
-                ' par ',
-                React.createElement(
-                    'a',
-                    { href: '#' },
-                    this.props.author
-                )
+              'div',
+              { className: 'col-sm-3 col-sm-offset-1 blog-sidebar' },
+              React.createElement(TutorialAside, null)
             )
-        );
-    }
+          )
+        )
+      )
+    );
+  }
+});
+
+/**
+ * [TutorialList : List tutoriel]
+ * @return {ReactClass}
+ */
+var TutorialList = React.createClass({
+  displayName: 'TutorialList',
+
+  render: function render() {
+    var tutorialNodes = this.props.data.map(function (tutorial, index) {
+      return React.createElement(
+        Tutorial,
+        {
+          author: tutorial.author, titleTuto: tutorial.titleTuto,
+          dateTuto: tutorial.dateTuto, key: index },
+        tutorial.text
+      );
+    });
+    return React.createElement(
+      'div',
+      { className: 'tutorialList' },
+      tutorialNodes
+    );
+  }
+});
+
+/**
+ * [Tutorial : Tutoriel render]
+ * @return {ReactClass}
+ */
+var Tutorial = React.createClass({
+  displayName: 'Tutorial',
+
+  rawMarkup: function rawMarkup() {
+    var rawMarkup = marked(this.props.children.toString(), { sanitize: true });
+    return { __html: rawMarkup };
+  },
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'blog-post' },
+      React.createElement(
+        'h2',
+        { className: 'blog-post-title tutorialAuthor' },
+        this.props.titleTuto
+      ),
+      React.createElement('span', { dangerouslySetInnerHTML: this.rawMarkup() }),
+      React.createElement(
+        'p',
+        { className: 'blog-post-meta' },
+        this.props.dateTuto,
+        ' par ',
+        React.createElement(
+          'a',
+          { href: '#' },
+          this.props.author
+        )
+      )
+    );
+  }
 });
 
 // var TutorialForm = React.createClass({
@@ -19386,6 +19424,7 @@ var Tutorial = React.createClass({
 //     }
 // });
 
+//Rendu
 ReactDOM.render(React.createElement(TutorialBox, { url: '/api/tutorials', pollInterval: 2000 }), document.getElementById('content'));
 
 },{"./header.js":157,"./tutorialForm.js":159,"react":156}],159:[function(require,module,exports){
