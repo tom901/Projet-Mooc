@@ -18975,6 +18975,120 @@ module.exports = warning;
 module.exports = require('./lib/React');
 
 },{"./lib/React":25}],157:[function(require,module,exports){
+'use strict';
+
+module.exports = React.createClass({
+	displayName: 'exports',
+
+	render: function render() {
+		return React.createElement(
+			'div',
+			{ style: { margin: 'auto', width: '400px' } },
+			React.createElement(
+				'h2',
+				null,
+				' La page consultation corrections'
+			)
+		);
+	}
+});
+
+},{}],158:[function(require,module,exports){
+'use strict';
+
+module.exports = React.createClass({
+	displayName: 'exports',
+
+	render: function render() {
+		return React.createElement(
+			'div',
+			{ style: { margin: 'auto', width: '400px' } },
+			React.createElement(
+				'h2',
+				null,
+				' La page consultation des exercices'
+			)
+		);
+	}
+});
+
+},{}],159:[function(require,module,exports){
+'use strict';
+
+module.exports = React.createClass({
+	displayName: 'exports',
+
+	render: function render() {
+		return React.createElement(
+			'div',
+			{ style: { margin: 'auto', width: '400px' } },
+			React.createElement(
+				'h2',
+				null,
+				' La page modification profile'
+			)
+		);
+	}
+});
+
+},{}],160:[function(require,module,exports){
+'use strict';
+
+module.exports = React.createClass({
+	displayName: 'exports',
+
+	render: function render() {
+		return React.createElement(
+			'div',
+			{ style: { margin: 'auto', width: '400px' } },
+			React.createElement(
+				'h2',
+				null,
+				' La page historique'
+			)
+		);
+	}
+});
+
+},{}],161:[function(require,module,exports){
+'use strict';
+
+module.exports = React.createClass({
+	displayName: 'exports',
+
+	render: function render() {
+		return React.createElement(
+			'div',
+			{ style: { margin: 'auto', width: '400px' } },
+			React.createElement(
+				'h2',
+				null,
+				' La page home'
+			)
+		);
+	}
+});
+
+},{}],162:[function(require,module,exports){
+'use strict';
+
+module.exports = React.createClass({
+	displayName: 'exports',
+
+	render: function render() {
+		return React.createElement(
+			'div',
+			{ style: { margin: 'auto', width: '400px' } },
+			React.createElement(
+				'h2',
+				null,
+				' La page de déconnexion'
+			)
+		);
+	}
+});
+
+},{}],163:[function(require,module,exports){
 /**
  * Application logic
  * =================
@@ -19243,33 +19357,14 @@ var TutorialBox = React.createClass({
     setInterval(this.loadCommentsFromServer, this.props.pollInterval);
   },
   render: function render() {
+
+    var itemsMenu = [{ name: "PageHome", label: "Home", isDropDown: false }, { name: "Exercices", label: "Exercices", isDropDown: true, subItems: [{ name: "ConsultExercices", label: "Consulter les exercices" }, { name: "ConsultCorrect", label: "Consulter les corrections" }] }, { name: "PageHistorique", label: "Historique", isDropDown: false }, { name: "PageProfil", label: "Profil", isDropDown: true, subItems: [{ name: "EditProfile", label: "Modifier mon profil" }, { name: "LogOut", label: "Déconnexion" }] }];
+
     return React.createElement(
       'div',
       { className: 'tutorialBox' },
-      React.createElement(Menu, null),
-      React.createElement(
-        'div',
-        { className: 'tutorial' },
-        React.createElement(
-          'div',
-          { className: 'container' },
-          React.createElement(
-            'div',
-            { className: 'row' },
-            React.createElement(
-              'div',
-              { className: 'col-sm-8 blog-main' },
-              React.createElement(TutorialList, { data: this.state.data }),
-              React.createElement(TutorialForm, { onTutorialSubmit: this.handleTutorialSubmit })
-            ),
-            React.createElement(
-              'div',
-              { className: 'col-sm-3 col-sm-offset-1 blog-sidebar' },
-              React.createElement(TutorialAside, null)
-            )
-          )
-        )
-      )
+      React.createElement(Menu, { items: itemsMenu, title: 'Cours' }),
+      React.createElement('div', { id: 'body' })
     );
   }
 });
@@ -19335,139 +19430,196 @@ var Tutorial = React.createClass({
   }
 });
 
-ReactDOM.render(React.createElement(TutorialBox, { url: '/api/tutorials', pollInterval: 2000 }), document.getElementById('content'));
+ReactDOM.render(React.createElement(TutorialBox, { url: '/api/tutorials', pollInterval: 1000000 }), document.getElementById('content'));
+/*<div className="tutorial">
+ <div className="container">
+   <div className="row">
+     <div className="col-sm-8 blog-main">
+       <TutorialList data={this.state.data} />
+       <TutorialForm onTutorialSubmit={this.handleTutorialSubmit} />
+     </div>
+     <div className="col-sm-3 col-sm-offset-1 blog-sidebar">
+       <TutorialAside />
+     </div>
+   </div>
+ </div>
+</div>*/
 
-},{"./menu.js":158,"./tutorialForm.js":159,"react":156}],158:[function(require,module,exports){
-"use strict";
+},{"./menu.js":164,"./tutorialForm.js":166,"react":156}],164:[function(require,module,exports){
+'use strict';
 
-module.exports = React.createClass({
-  displayName: "exports",
+var PageHome = require('./homepage.js');
+var ConsultExercices = require('./consultexercicespage.js');
+var ConsultCorrect = require('./consultcorrectpage.js');
+var EditProfile = require('./editprofilepage.js');
+var LogOut = require('./logout.js');
+var PageHistorique = require('./historiquepage.js');
+
+var RenderComponent = require('./renderComponent.js');
+
+var MenuDropDown = React.createClass({
+  displayName: 'MenuDropDown',
+
+  chooseClick: function chooseClick(name) {
+    this.props.parent.clicked(name);
+  },
 
   render: function render() {
+
+    var self = this;
+
     return React.createElement(
-      "nav",
-      { className: "navbar navbar-inverse navbar-static-top" },
+      'li',
+      { key: self.props.index, className: 'dropdown' },
       React.createElement(
-        "div",
-        { className: "container" },
-        React.createElement(
-          "div",
-          { className: "navbar-header" },
-          React.createElement(
-            "button",
-            { type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#navbar", "aria-expanded": "false", "aria-controls": "navbar" },
+        'a',
+        { href: '#', className: 'dropdown-toggle', 'data-toggle': 'dropdown', role: 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
+        this.props.title,
+        ' ',
+        React.createElement('span', { className: 'caret' })
+      ),
+      React.createElement(
+        'ul',
+        { className: 'dropdown-menu' },
+        self.props.subItems.map(function (item, index) {
+
+          return React.createElement(
+            'li',
+            { key: index, onClick: self.chooseClick.bind(self, item.name) },
             React.createElement(
-              "span",
-              { className: "sr-only" },
-              "Toggle navigation"
+              'a',
+              { href: '#' },
+              item.label
+            )
+          );
+        })
+      )
+    );
+  }
+
+});
+
+var MenuClassic = React.createClass({
+  displayName: 'MenuClassic',
+
+  chooseClick: function chooseClick(name) {
+    this.props.clicked(name);
+  },
+  render: function render() {
+
+    var classActive = "";
+
+    if (this.props.parent.state.focused == this.props.name) {
+      classActive = "active";
+    }
+
+    return React.createElement(
+      'li',
+      { key: this.props.index, className: classActive, onClick: this.chooseClick.bind(this, this.props.name) },
+      React.createElement(
+        'a',
+        { href: '#' },
+        this.props.title
+      )
+    );
+  }
+
+});
+
+module.exports = React.createClass({
+  displayName: 'exports',
+
+  typeMenuRender: function typeMenuRender(item) {
+
+    if (item.isDropDown) {
+      return React.createElement(MenuDropDown, { index: item.index, title: item.label, subItems: item.subItems, clicked: this.clicked, parent: this });
+    } else {
+      return React.createElement(MenuClassic, { index: item.index, title: item.label, name: item.name, clicked: this.clicked, parent: this });
+    }
+  },
+
+  loadContenu: function loadContenu(focused) {
+    ReactDOM.render(React.createElement(RenderComponent, { component: eval(focused) }), document.getElementById('body'));
+  },
+
+  getInitialState: function getInitialState() {
+
+    return { focused: "PageHome" };
+  },
+
+  render: function render() {
+    var self = this;
+
+    return React.createElement(
+      'nav',
+      { className: 'navbar navbar-inverse navbar-static-top' },
+      React.createElement(
+        'div',
+        { className: 'container' },
+        React.createElement(
+          'div',
+          { className: 'navbar-header' },
+          React.createElement(
+            'button',
+            { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#navbar', 'aria-expanded': 'false', 'aria-controls': 'navbar' },
+            React.createElement(
+              'span',
+              { className: 'sr-only' },
+              'Toggle navigation'
             ),
-            React.createElement("span", { className: "icon-bar" }),
-            React.createElement("span", { className: "icon-bar" }),
-            React.createElement("span", { className: "icon-bar" })
+            React.createElement('span', { className: 'icon-bar' }),
+            React.createElement('span', { className: 'icon-bar' }),
+            React.createElement('span', { className: 'icon-bar' })
           ),
           React.createElement(
-            "a",
-            { className: "navbar-brand", href: "#" },
-            "Cours"
+            'a',
+            { className: 'navbar-brand', href: '#' },
+            self.props.title
           )
         ),
         React.createElement(
-          "div",
-          { id: "navbar", className: "navbar-collapse collapse" },
+          'div',
+          { id: 'navbar', className: 'navbar-collapse collapse' },
           React.createElement(
-            "ul",
-            { className: "nav navbar-nav" },
-            React.createElement(
-              "li",
-              { className: "active" },
-              React.createElement(
-                "a",
-                { href: "#" },
-                "Home"
-              )
-            ),
-            React.createElement(
-              "li",
-              { className: "dropdown" },
-              React.createElement(
-                "a",
-                { href: "#", className: "dropdown-toggle", "data-toggle": "dropdown", role: "button", "aria-haspopup": "true", "aria-expanded": "false" },
-                "Exercices ",
-                React.createElement("span", { className: "caret" })
-              ),
-              React.createElement(
-                "ul",
-                { className: "dropdown-menu" },
-                React.createElement(
-                  "li",
-                  null,
-                  React.createElement(
-                    "a",
-                    { href: "#" },
-                    "Consulter les exercices"
-                  )
-                ),
-                React.createElement(
-                  "li",
-                  null,
-                  React.createElement(
-                    "a",
-                    { href: "#" },
-                    "Consulter les corrections"
-                  )
-                )
-              )
-            ),
-            React.createElement(
-              "li",
-              null,
-              React.createElement(
-                "a",
-                { href: "#contact" },
-                "Historique"
-              )
-            ),
-            React.createElement(
-              "li",
-              { className: "dropdown" },
-              React.createElement(
-                "a",
-                { href: "#", className: "dropdown-toggle", "data-toggle": "dropdown", role: "button", "aria-haspopup": "true", "aria-expanded": "false" },
-                "Profil ",
-                React.createElement("span", { className: "caret" })
-              ),
-              React.createElement(
-                "ul",
-                { className: "dropdown-menu" },
-                React.createElement(
-                  "li",
-                  null,
-                  React.createElement(
-                    "a",
-                    { href: "#" },
-                    "Modifier mon profil"
-                  )
-                ),
-                React.createElement("li", { role: "separator", className: "divider" }),
-                React.createElement(
-                  "li",
-                  null,
-                  React.createElement(
-                    "a",
-                    { href: "#" },
-                    "Déconnexion"
-                  )
-                )
-              )
-            )
+            'ul',
+            { className: 'nav navbar-nav' },
+            self.props.items.map(function (item, index) {
+
+              return self.typeMenuRender(item, index);
+            })
           )
         )
       )
     );
+  },
+
+  clicked: function clicked(name) {
+
+    this.setState({ focused: name });
+  },
+
+  shouldComponentUpdate: function shouldComponentUpdate(nextProps, nextState) {
+
+    this.loadContenu(nextState.focused);
+
+    return true;
   }
+
 });
 
-},{}],159:[function(require,module,exports){
+},{"./consultcorrectpage.js":157,"./consultexercicespage.js":158,"./editprofilepage.js":159,"./historiquepage.js":160,"./homepage.js":161,"./logout.js":162,"./renderComponent.js":165}],165:[function(require,module,exports){
+"use strict";
+
+module.exports = React.createClass({
+    displayName: "exports",
+
+    render: function render() {
+        var Component = this.props.component;
+        return React.createElement(Component, null);
+    }
+});
+
+},{}],166:[function(require,module,exports){
 'use strict';
 
 module.exports = React.createClass({
@@ -19514,4 +19666,4 @@ module.exports = React.createClass({
     }
 });
 
-},{}]},{},[157]);
+},{}]},{},[163]);

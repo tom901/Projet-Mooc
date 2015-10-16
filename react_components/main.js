@@ -113,10 +113,21 @@ var TutorialBox = React.createClass({
     setInterval(this.loadCommentsFromServer, this.props.pollInterval);
   },
   render: function() {
+
+
+    var itemsMenu = [
+                        { name: "PageHome",label : "Home", isDropDown:false },
+                        { name:"Exercices",label : "Exercices", isDropDown : true, subItems:[{ name: "ConsultExercices",label:"Consulter les exercices"},{ name: "ConsultCorrect",label:"Consulter les corrections"}]},
+                        { name:"PageHistorique",label : "Historique", isDropDown:false },
+                        { name:"PageProfil", label:"Profil",isDropDown:true,subItems:[{ name: "EditProfile",label:"Modifier mon profil"},{ name: "LogOut",label:"Déconnexion"}]}
+                    ];
+
     return (
       <div className="tutorialBox">
-        <Menu />
-        <div className="tutorial">
+        <Menu items={itemsMenu} title="Cours"/>
+        <div id="body" >
+        </div>
+        {/*<div className="tutorial">
           <div className="container">
             <div className="row">
               <div className="col-sm-8 blog-main">
@@ -128,7 +139,7 @@ var TutorialBox = React.createClass({
               </div>
             </div>
           </div>
-        </div>
+        </div>*/}
       </div>
     );
   }
@@ -182,6 +193,6 @@ var Tutorial = React.createClass({
 });
 
 ReactDOM.render(
-    <TutorialBox url="/api/tutorials" pollInterval={2000} />
+    <TutorialBox url="/api/tutorials" pollInterval={1000000} />
     ,document.getElementById('content')
   );
