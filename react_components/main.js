@@ -24,6 +24,12 @@ var Menu = require('./menu.js');
 var TutorialForm = require('./tutorialForm.js');
 
 /**
+ * [ProfilEdit : Chargement Du formulaire pour l'edition du profil]
+ * @type {ReactClass}
+ */
+var ProfilEdit = require('./profil-edit.js');
+
+/**
  * [TutorialAside : Aside Zone]
  * @return {ReactClass}
  */
@@ -127,19 +133,6 @@ var TutorialBox = React.createClass({
         <Menu items={itemsMenu} title="Cours"/>
         <div id="body" >
         </div>
-        {/*<div className="tutorial">
-          <div className="container">
-            <div className="row">
-              <div className="col-sm-8 blog-main">
-                <TutorialList data={this.state.data} />
-                <TutorialForm onTutorialSubmit={this.handleTutorialSubmit} />
-              </div>
-              <div className="col-sm-3 col-sm-offset-1 blog-sidebar">
-                <TutorialAside />
-              </div>
-            </div>
-          </div>
-        </div>*/}
       </div>
     );
   }

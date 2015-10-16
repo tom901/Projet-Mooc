@@ -1,48 +1,51 @@
 {
-    "name": "Projet-Mooc",
-    "version": "0.0.1",
-    "description": "Client MOOC pour CodeGradX en React.JS",
-    "author": "Thomas PARAISO <thomas.paraiso@me.com>",
-    "contributors": [
-        "Alex Maxime <cad.maxime@gmail.com>",
-        "Leslie CHARENTE <ton mail>",
-        "... BRIAN <ton mail>",
-        "Vicky POUMIER <ton mail>"
-    ],
-    "main": "server.js",
-    "dependencies": {
-        "browserify": "^11.2.0",
-        "babelify": "^6.3.0",
-        "body-parser": "^1.4.3",
-        "express": "^4.13.3",
-        "react": "^0.14.0",
-        "react-dom": "^0.14.0"
-    },
-    "devDependencies": {
-        "grunt": "^0.4.5",
-        "grunt-browserify": "^4.0.1",
-        "grunt-contrib-watch": "^0.6.1",
-        "grunt-express-server": "^0.5.1"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "grunt"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/tom901/Projet-Mooc.git"
-    },
-    "keywords": [
-        "react",
-        "MOOC",
-        "INSTA"
-    ],
-    "bugs": {
-        "url": "https://github.com/tom901/Projet-Mooc/issues"
-    },
-    "homepage": "https://github.com/tom901/Projet-Mooc",
-    "engines": {
-        "node": "0.12.x"
-    },
-    "license": "MIT"
+  "name": "Projet-Mooc",
+  "version": "0.0.1",
+  "description": "Client MOOC pour CodeGradX en React.JS",
+  "author": "Thomas PARAISO <thomas.paraiso@me.com>",
+  "contributors": [
+    "Alex Maxime <cad.maxime@gmail.com>",
+    "Leslie CHARENTE <ton mail>",
+    "... BRIAN <ton mail>",
+    "Vicky POUMIER <ton mail>"
+  ],
+  "main": "server.js",
+  "dependencies": {
+    "browserify": "^11.2.0",
+    "babelify": "^6.3.0",
+    "body-parser": "^1.4.3",
+    "express": "^4.13.3",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^4.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-express-server": "^0.5.1",
+    "grunt-jsxhint": "^0.6.0",
+    "grunt-contrib-jshint": "^0.11.3",
+    "react-tools": "^0.13.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tom901/Projet-Mooc.git"
+  },
+  "keywords": [
+    "react",
+    "MOOC",
+    "INSTA"
+  ],
+  "bugs": {
+    "url": "https://github.com/tom901/Projet-Mooc/issues"
+  },
+  "homepage": "https://github.com/tom901/Projet-Mooc",
+  "engines": {
+    "node": "0.12.x"
+  },
+  "license": "MIT"
 }
