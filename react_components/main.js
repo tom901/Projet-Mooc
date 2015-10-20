@@ -32,7 +32,7 @@ var ProfilView = require('./profil-view.js');
  /* [ProfilEdit : Chargement Du formulaire pour l'edition du profil]
  * @type {ReactClass}
  */
-var ProfilEdit = require('./profil-edit.js');
+var ProfilEdit = require('./editprofilepage.js');
 
 /**
  * [ProfilEdit : Chargement Du formulaire pour l'edition du profil]
