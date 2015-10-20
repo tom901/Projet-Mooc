@@ -30,6 +30,12 @@ var TutorialForm = require('./tutorialForm.js');
 var ProfilEdit = require('./profil-edit.js');
 
 /**
+ * [ProfilEdit : Chargement Du formulaire pour l'edition du profil]
+ * @type {ReactClass}
+ */
+var ProfilInscription = require('./profil-inscription.js');
+
+/**
  * [TutorialAside : Aside Zone]
  * @return {ReactClass}
  */
@@ -122,7 +128,7 @@ var TutorialBox = React.createClass({
     return (
       <div className="tutorialBox">
         <Menu />
-
+        <ProfilInscription />
         <ProfilEdit />
         <div className="tutorial">
           <div className="container">
