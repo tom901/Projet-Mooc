@@ -1,4 +1,5 @@
 
+
 var PageHome = require('./homepage.js');
 var ConsultExercices = require('./consultexercicespage.js');
 var ConsultCorrect = require('./consultcorrectpage.js');
@@ -46,6 +47,8 @@ var MenuClassic = React.createClass({
 
     if(this.props.parent.state.focused == this.props.name){
       classActive = "active";
+
+
     }
 
    return <li key={this.props.index} className={classActive} onClick={this.chooseClick.bind(this,this.props.name)} ><a href="#" >{this.props.title}</a></li>;
@@ -77,6 +80,21 @@ module.exports  = React.createClass({
 
   },
 
+  dateToday : function(){
+
+    var dt = new Date();
+    var day = dt.getDay();
+    var today = dt.getDate();
+    var year = dt.getFullYear();
+    var month = dt.getMonth();
+    var hour   = dt.getHours();
+    var minute  = dt.getMinutes();
+    var seconde = dt.getSeconds();
+    var tabDay = new Array("Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi");
+    var tabMonth = new Array("Janvier","Février","Mars","Avril","Mai","Juin","Juillet", "Août","Septembre","Octobre","Novembre","Décembre");
+    return "Nous sommes le "+tabDay[day]+" "+today+" "+tabMonth[month]+" "+year;
+  },
+
   render: function(){
     var self = this;
 
@@ -104,6 +122,7 @@ module.exports  = React.createClass({
 
            })
          }
+         <li><a><span> {this.dateToday()}</span></a></li>
        </ul>
      </div>
 
@@ -126,3 +145,4 @@ module.exports  = React.createClass({
   }
 
 });
+
