@@ -79,7 +79,6 @@ module.exports  = React.createClass({
 
   render: function(){
     var self = this;
-
     return(
      <nav className="navbar navbar-inverse navbar-static-top">
 
@@ -108,7 +107,7 @@ module.exports  = React.createClass({
      </div>
 
      </div>
-     </nav>  
+     </nav>
      )
   },
 
