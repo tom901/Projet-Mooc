@@ -1,4 +1,3 @@
-
 var PageHome = require('./homepage.js');
 var ConsultExercices = require('./consultexercicespage.js');
 var ConsultCorrect = require('./consultcorrectpage.js');
