@@ -2,7 +2,7 @@ module.exports  = React.createClass({
   render : function(){
     return(
               <div className="container">
-                <h1>Mon Profil</h1>
+                <h1>Edition du Profil</h1>
                 <div className="row">
 
                   <div className="col-md-3">
@@ -20,25 +20,25 @@ module.exports  = React.createClass({
                       This is an <strong>.alert</strong>
                       Use this to show important messages to the user.
                     </div>
-                    <h3>Mes informations personnelles</h3>
-                    <br/>
+                    <h3>Personal info</h3>
+
                     <form className="form-horizontal tutorialForm" role="form" onSubmit={this.handleSubmit}>
                       <div className="form-group">
-                        <label className="col-md-3 control-label">Pseudo:</label>
-                        <div className="col-md-8">
-                          <input className="form-control" type="text" value="janeuser"/>
-                        </div>
-                      </div>
-                      <div className="form-group">
-                        <label className="col-lg-3 control-label">Nom:</label>
+                        <label className="col-lg-3 control-label">First name:</label>
                         <div className="col-lg-8">
-                          <input className="form-control" type="text" value="Jane"/>
+                          <input className="form-control" type="text" />
                           </div>
                       </div>
                       <div className="form-group">
-                        <label className="col-lg-3 control-label">Prénom:</label>
+                        <label className="col-lg-3 control-label">Last name:</label>
                         <div className="col-lg-8">
-                          <input className="form-control" type="text" value="Bishop"/>
+                          <input className="form-control" type="text" />
+                          </div>
+                      </div>
+                      <div className="form-group">
+                        <label className="col-lg-3 control-label">Company:</label>
+                        <div className="col-lg-8">
+                          <input className="form-control" type="text" />
                           </div>
                       </div>
                       <div className="form-group">
@@ -48,13 +48,19 @@ module.exports  = React.createClass({
                           </div>
                       </div>
                       <div className="form-group">
-                        <label className="col-md-3 control-label">Mot de passe:</label>
+                        <label className="col-md-3 control-label">Username:</label>
+                        <div className="col-md-8">
+                          <input className="form-control" type="text" />
+                          </div>
+                      </div>
+                      <div className="form-group">
+                        <label className="col-md-3 control-label">Password:</label>
                         <div className="col-md-8">
                           <input className="form-control" type="password" />
                           </div>
                       </div>
                       <div className="form-group">
-                        <label className="col-md-3 control-label">Confirmation du mot de passe:</label>
+                        <label className="col-md-3 control-label">Confirm password:</label>
                         <div className="col-md-8">
                           <input className="form-control" type="password" />
                           </div>
@@ -63,7 +69,7 @@ module.exports  = React.createClass({
                         <label className="col-md-3 control-label">
                         </label>
                         <div className="col-md-8">
-                          <input type="button" className="btn btn-primary" value="Sauvegarder"/> &nbsp;
+                          <input type="button" className="btn btn-primary" />
                           <span>
                           </span>
                           <input type="reset" className="btn btn-default" />
