@@ -18,12 +18,12 @@ var MenuDropDown = React.createClass({
    var self = this;
 
    return (<li key={self.props.index} className="dropdown">
-     <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.props.title} <span className="caret"></span></a>
+     <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{this.props.title} <span className="caret"></span></a>
      <ul className="dropdown-menu">
          {
             self.props.subItems.map(function(item, index){
 
-            return <li key={index} onClick={self.chooseClick.bind(self,item.name)} ><a href="#" >{item.label}</a></li>;
+            return <li key={index} onClick={self.chooseClick.bind(self,item.name)} ><a>{item.label}</a></li>;
 
           })
         }
@@ -49,7 +49,7 @@ var MenuClassic = React.createClass({
 
     }
 
-   return <li key={this.props.index} className={classActive} onClick={this.chooseClick.bind(this,this.props.name)} ><a href="#" >{this.props.title}</a></li>;
+   return <li key={this.props.index} className={classActive} onClick={this.chooseClick.bind(this,this.props.name)} ><a>{this.props.title}</a></li>;
  }
 
 });
@@ -98,7 +98,7 @@ module.exports  = React.createClass({
     return(
      <nav className="navbar navbar-inverse navbar-static-top">
 
-     <div className="container">
+     <div className="container-fluid">
 
      <div className="navbar-header">
      <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -111,7 +111,7 @@ module.exports  = React.createClass({
      </div>
 
      <div id="navbar" className="navbar-collapse collapse">
-       <ul className="nav navbar-nav">
+       <ul className="nav navbar-nav navbar-right">
          {
             self.props.items.map(function(item,index){
 

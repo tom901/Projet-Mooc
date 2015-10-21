@@ -7,7 +7,7 @@ module.exports = function(grunt) {
       livereload: true,
       },
       react: {
-        files: 'react_components/*.js',
+        files: ['react_components/*.js','public/css/*.css'],
         tasks: ['browserify']
       },
       express :{
@@ -15,10 +15,10 @@ module.exports = function(grunt) {
        tasks: ['express:dev'],
        options: {
         spawn: false
-      } 
+      }
     }
   },
-  
+
   express : {
     dev: {
       options: {
@@ -37,8 +37,6 @@ module.exports = function(grunt) {
     }
   }
 });
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-jsxhint');
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -46,5 +44,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['express','browserify',
     'watch'
     ]);
-  
+
 };

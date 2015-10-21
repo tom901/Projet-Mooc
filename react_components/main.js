@@ -1,7 +1,7 @@
 /**
  * Application logic
  * =================
- * Ce fichier contiendra toute la logique 
+ * Ce fichier contiendra toute la logique
  * metier que l'on souhaite appliquer
  */
 
@@ -45,14 +45,14 @@ var ProfilInscription = require('./profil-inscription.js');
  * @return {ReactClass}
  */
 var TutorialAside = React.createClass({
-  render : function(){   
+  render : function(){
     return(
       <div>
         <div className="sidebar-module sidebar-module-inset">
           <h4>About</h4>
           <p>
-            Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras 
-            mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum 
+            Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras
+            mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum
             nulla sed consectetur.
           </p>
         </div>
@@ -133,7 +133,7 @@ var TutorialBox = React.createClass({
 
 
     var itemsMenu = [
-                        { name: "PageHome",label : "Home", isDropDown:false },
+                        { name: "PageHome",label : "Accueil", isDropDown:false },
                         { name:"Exercices",label : "Exercices", isDropDown : true, subItems:[{ name: "ConsultExercices",label:"Consulter les exercices"},{ name: "ConsultCorrect",label:"Consulter les corrections"}]},
                         { name:"PageHistorique",label : "Historique", isDropDown:false },
                         { name:"PageProfil", label:"Profil",isDropDown:true,subItems:[{ name: "EditProfile",label:"Modifier mon profil"},{ name: "LogOut",label:"Déconnexion"}]}
@@ -157,8 +157,8 @@ var TutorialList = React.createClass({
   render: function() {
     var tutorialNodes = this.props.data.map(function(tutorial, index) {
       return (
-        <Tutorial 
-          author={tutorial.author} titleTuto={tutorial.titleTuto} 
+        <Tutorial
+          author={tutorial.author} titleTuto={tutorial.titleTuto}
           dateTuto={tutorial.dateTuto} key={index}>
           {tutorial.text}
         </Tutorial>
@@ -187,7 +187,7 @@ var Tutorial = React.createClass({
             {this.props.titleTuto}
           </h2>
           <span dangerouslySetInnerHTML={this.rawMarkup()} />
-          <p className="blog-post-meta"> 
+          <p className="blog-post-meta">
             {this.props.dateTuto} par <a href="#">{this.props.author}</a>
           </p>
         </div>
