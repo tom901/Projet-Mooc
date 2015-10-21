@@ -239,3 +239,15 @@ ul {
 label{
   text-align: right;
 }
+
+.hero-spacer {
+    margin-top: 50px;
+}
+
+.hero-feature {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
