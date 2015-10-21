@@ -1,4 +1,21 @@
+ /**
+ * [HistoriqueDetail : Chargement de la page d'historique des exercices detaillés]
+ * @type {ReactClass}
+ */
+var HistoriqueDetail = require('./historiquedetail.js');
+
  module.exports = React.createClass({
+   	getInitialState: function(){
+        return { data: [] };
+
+    },
+    clickDetailHistorique : function(){
+    	ReactDOM.render(
+		    <HistoriqueDetail />
+		    ,document.getElementById('body')
+		  );
+
+    },
 	render : function(){ 
 		return (
 			<div className="container">
@@ -20,7 +37,7 @@
 				<div className="row mt">
 					<div className="col-md-12">
 						<div className="content-panel " >
-							<h4> <i className="fa fa-angle-right">Historique des Exercices</i>
+							<h4> <i className="fa fa-angle-right"> Historique des Exercices</i>
 							</h4>
 							<br/>
 							<table className="table table-bordered table-advance table-hover">
@@ -54,7 +71,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td className="text-center">0</td>
+										<td  onClick={this.clickDetailHistorique} className="text-center">0</td>
 										<td>
 											<a href="basic_table.html#">Création d'une page HTML</a>
 										</td>

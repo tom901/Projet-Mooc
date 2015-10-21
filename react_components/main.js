@@ -42,9 +42,10 @@ var ProfilEdit = require('./editprofilepage.js');
 var ProfilInscription = require('./profil-inscription.js');
 
 /**
- * [TutorialAside : Aside Zone]
- * @return {ReactClass}
+ * [HistoriqueDetail : Chargement de la page d'historique des exercices detaillés]
+ * @type {ReactClass}
  */
+var HistoriqueDetail = require('./historiquedetail.js');
 
 /**
  * [MainContent : Box tutoriel]
