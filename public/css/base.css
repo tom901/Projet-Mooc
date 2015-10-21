@@ -369,11 +369,19 @@ Google Plus BTN
 }
 
 .paracamplus{
+    margin: 5px 20px;
     background-image: url('../images/Logo-Paracamplus_blanc.png');
     background-size: 100%;
+	background-position: center;
     width: 40px;
     height: 40px;
 }
+@media (min-width: 768px){
+    .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+        margin-left: 20px;
+    }
+}
+
 /**
  * Aside
  */
@@ -408,7 +416,7 @@ Google Plus BTN
 }
 
 ul.sidebar-menu {
-    margin-top: 75px;
+    margin-top: 15px;
 }
 
 #sidebar > ul > li > ul.sub {
