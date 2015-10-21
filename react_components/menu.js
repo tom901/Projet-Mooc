@@ -105,7 +105,7 @@ module.exports  = React.createClass({
                                     return self.typeMenuRender(item,index) ;
                                 })
                             }
-                            <li><a><span> {this.dateToday()}</span></a></li>
+                            <li className="date-color">{this.dateToday()}</li>
                         </ul>
                     </div>
 

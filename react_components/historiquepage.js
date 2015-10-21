@@ -4,6 +4,7 @@
 			<div className="container">
 				<div className="row">
 					<div className="col-md-12">
+					<br/>
 						<p>
 							Voici vos interactions reliées à la série d’exercices (identifiée par insta2) avec l’infrastructure CodeGradX (classées par ordre antichronologique). Vous pouvez également contempler votre tableau de chasse récapitulatif.
 						</p>
