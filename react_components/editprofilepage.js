@@ -23,7 +23,7 @@ module.exports  = React.createClass({
 
         $("#password").each(function(){
             $(this).on("change", function(){
-                password = traitementVariable($(this).val(), "password", "^[a-zA-Z 0-9@_-]+$");
+                password = traitementVariable($(this).val(), "password", "^[a-zA-Z 0-9@_-]{4,}$");
             });
         });
 
@@ -33,7 +33,7 @@ module.exports  = React.createClass({
                     error("la Confirmation du mot de passe", "#passwordConfirm", "#passwordConfirmValid" ,".form-group", ".glyphicon");
                 }
                 else{
-                    passwordConfirm = traitementVariable($(this).val(), "passwordConfirm", "^[a-zA-Z 0-9@_-]+$");
+                    passwordConfirm = traitementVariable($(this).val(), "passwordConfirm", "^[a-zA-Z 0-9@_-]{4,}$");
                 }
             
             });
@@ -54,7 +54,7 @@ module.exports  = React.createClass({
             // var prenomModif = traitementVariable($("#prenom").val(), "prenom", "^[a-zA-Z áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœ]+$");
             // var emailModif = traitementVariable($("#email").val(), "email", "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$");
             // var pseudoModif = traitementVariable($("#pseudo").val(), "pseudo", "^[a-zA-Z áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœ0-9]+$");
-            // var passwordModif = traitementVariable($("#password").val(), "password", "^[a-zA-Z 0-9@_-]+$");
+            // var passwordModif = traitementVariable($("#password").val(), "password", "^[a-zA-Z 0-9@_-]{4,}$");
 
             // $.ajax({ // on fait la requete ajax
             //     url: "info.php", //voir l'url pour l'envoie des données avec react
@@ -76,49 +76,49 @@ module.exports  = React.createClass({
         //prévoir les fonctions de traitement à part;
         function traitementVariable(variable, champs, regex){
           //var regex = /^[a-zA-Z ]+$/;
-          if(champs == "email" || champs == "password" || champs == "passwordConfirm"){
-            if(variable == ""){
-                error("le "+champs, "#"+champs, "#"+champs+"Valid" ,".form-group", ".glyphicon");
+            if(champs == "email" || champs == "password" || champs == "passwordConfirm"){
+                if(variable == ""){
+                    error("le "+champs, "#"+champs, "#"+champs+"Valid" ,".form-group", ".glyphicon");
+                }
+                else{
+                  var pattern = new RegExp(regex);
+                  if(!pattern.test(variable)){
+                        warning("format du "+champs, "#"+champs, "#"+champs+"Valid" ,".form-group", ".glyphicon");
+                    }
+                    else{
+                        success(""+champs, "#"+champs, "#"+champs+"Valid", ".form-group", ".glyphicon");
+                        return variable;
+                    }
+                }
             }
             else{
-              var pattern = new RegExp(regex);
-              if(!pattern.test(variable)){
-                    warning("format du "+champs, "#"+champs, "#"+champs+"Valid" ,".form-group", ".glyphicon");
-                }
-                else{
-                    success(""+champs, "#"+champs, "#"+champs+"Valid", ".form-group", ".glyphicon");
-                    return variable;
-                }
-            }
-          }
-          else{
-            if(champs != "email" || champs != "password" || champs != "passwordConfirm"  ){
-              var pattern = new RegExp(regex);
-                if(champs == "email" || champs == "password" || champs == "passwordConfirm"){
-            if(!pattern.test(variable)){
-                      warning("format du "+champs, "#"+champs, "#"+champs+"Valid" ,".form-group", ".glyphicon");
-                  }
-                  else{
-                      success(""+champs, "#"+champs, "#"+champs+"Valid", ".form-group", ".glyphicon");
-                        return variable;
-                  }
-                }
-                else{
-                  if(variable != ""){
+                if(champs != "email" || champs != "password" || champs != "passwordConfirm"  ){
+                    var pattern = new RegExp(regex);
+                    
                     if(!pattern.test(variable)){
                         warning("format du "+champs, "#"+champs, "#"+champs+"Valid" ,".form-group", ".glyphicon");
                     }
                     else{
                         success(""+champs, "#"+champs, "#"+champs+"Valid", ".form-group", ".glyphicon");
-                          return variable;
+                        return variable;
                     }
-                  }
-                  else{
-                    resetClass(""+champs, "#"+champs, "#"+champs+"Valid", ".form-group", ".glyphicon");
-                  }
                 }
+                else{
+                    if(variable != ""){
+                        if(!pattern.test(variable)){
+                            warning("format du "+champs, "#"+champs, "#"+champs+"Valid" ,".form-group", ".glyphicon");
+                        }
+                        else{
+                            success(""+champs, "#"+champs, "#"+champs+"Valid", ".form-group", ".glyphicon");
+                              return variable;
+                        }
+                    }
+                    else{
+                        resetClass(""+champs, "#"+champs, "#"+champs+"Valid", ".form-group", ".glyphicon");
+                    }
+                }
+                
             }
-          }
         }
 
          //fonction générique d'avertissement tiré de boostrap
@@ -155,7 +155,7 @@ module.exports  = React.createClass({
                 <h1>Mon Profil</h1>
                 <div className="row">
 
-                  <div className="col-md-3">
+                  <div className="col-lg-3">
                     <div className="text-center">
                       <img src="//placehold.it/100" className="avatar img-circle" alt="avatar"/>
                       <h6>Upload a different photo...</h6>
@@ -163,56 +163,56 @@ module.exports  = React.createClass({
                     </div>
                   </div>
 
-                  <div className="col-md-9 personal-info">
+                  <div className="col-lg-9 personal-info">
                     <h3>Mes informations personnelles</h3>
                     <br/>
                     <form className="form-horizontal tutorialForm" role="form" onSubmit={this.handleSubmit}>
                       <div className="form-group">
-                        <label className="col-md-3 control-label">Pseudo:</label>
-                        <div className="col-md-8">
+                        <label className="col-lg-3 control-label">Pseudo:</label>
+                        <div className="col-lg-9">
                           <input className="form-control" type="text" value="janeuser" id="pseudo" />
                           <span id="pseudoValid" className="glyphicon pull-right"></span>
                         </div>
                       </div>
                       <div className="form-group">
                         <label className="col-lg-3 control-label">Nom:</label>
-                        <div className="col-lg-8">
+                        <div className="col-lg-9">
                           <input className="form-control" type="text" value="Jane" id="nom" />
                           <span id="nomValid" className="glyphicon pull-right"></span>
                           </div>
                       </div>
                       <div className="form-group">
                         <label className="col-lg-3 control-label">Prénom:</label>
-                        <div className="col-lg-8">
+                        <div className="col-lg-9">
                           <input className="form-control" type="text" value="Bishop" id="prenom"/>
                           <span id="prenomValid" className="glyphicon pull-right"></span>
                           </div>
                       </div>
                       <div className="form-group">
                         <label className="col-lg-3 control-label">Email:</label>
-                        <div className="col-lg-8">
+                        <div className="col-lg-9">
                           <input className="form-control" type="text" id="email" required="required" />
                           <span id="emailValid" className="glyphicon pull-right"></span>
                           </div>
                       </div>
                       <div className="form-group">
-                        <label className="col-md-3 control-label">Mot de passe:</label>
-                        <div className="col-md-8">
+                        <label className="col-lg-3 control-label">Mot de passe:</label>
+                        <div className="col-lg-9">
                           <input className="form-control" type="password" id="password" required="required" />
                           <span id="passwordValid" className="glyphicon pull-right"></span>
                           </div>
                       </div>
                       <div className="form-group">
-                        <label className="col-md-3 control-label">Confirmation du mot de passe:</label>
-                        <div className="col-md-8">
+                        <label className="col-lg-3 control-label">Confirmation du mot de passe:</label>
+                        <div className="col-lg-9">
                           <input className="form-control" type="password" id="passwordConfirm" required="required" />
                           <span id="passwordConfirmValid" className="glyphicon pull-right"></span>
                           </div>
                       </div>
                       <div className="form-group">
-                        <label className="col-md-3 control-label">
+                        <label className="col-lg-3 control-label">
                         </label>
-                        <div className="col-md-8">
+                        <div className="col-lg-9">
                           <input type="button" className="btn btn-primary" id="valider" value="Sauvegarder"/> &nbsp;
                           <span>
                           </span>
