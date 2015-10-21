@@ -74,7 +74,7 @@ module.exports  = React.createClass({
 
   getInitialState: function(){
 
-    return { focused: "PageHome" };
+    return { focused: "PageHistorique" };
 
   },
 
