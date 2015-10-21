@@ -8,9 +8,9 @@ var PageHomeConnected = require('./connected.js');
 module.exports = React.createClass({
     login : function (event) {
         event.stopPropagation();
-        event.preventDefault()
-        ReactDOM.render(<PageHomeConnected />, document.getElementById('body'));
+        event.preventDefault();
         this.props.parent.setLogged();
+        ReactDOM.render(<PageHomeConnected />, document.getElementById('body'));
     },
     render : function(){
         return (

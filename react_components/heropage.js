@@ -1,3 +1,7 @@
+/**
+ * [MenuRendererFactory : Factory test
+ * @type {ReactClass}
+ */
 
 var LoginPage = require('./loginform.js');
 module.exports = React.createClass({
