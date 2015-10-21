@@ -367,3 +367,10 @@ Google Plus BTN
 .login-wrap .registration {
 	text-align: center;
 }
+
+.paracamplus{
+    background-image: url('../images/Logo-Paracamplus_blanc.png');
+    background-size: 100%;
+    width: 40px;
+    height: 40px;
+}

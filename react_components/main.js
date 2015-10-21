@@ -88,10 +88,10 @@ var TutorialAside = React.createClass({
 
 
 /**
- * [TutorialBox : Box tutoriel]
+ * [MainContent : Box tutoriel]
  * @return {ReactClass}
  */
-var TutorialBox = React.createClass({
+var MainContent = React.createClass({
   loadCommentsFromServer: function() {
     $.ajax({
       url: this.props.url,
@@ -148,54 +148,7 @@ var TutorialBox = React.createClass({
   }
 });
 
-
-/**
- * [TutorialList : List tutoriel]
- * @return {ReactClass}
- */
-var TutorialList = React.createClass({
-  render: function() {
-    var tutorialNodes = this.props.data.map(function(tutorial, index) {
-      return (
-        <Tutorial
-          author={tutorial.author} titleTuto={tutorial.titleTuto}
-          dateTuto={tutorial.dateTuto} key={index}>
-          {tutorial.text}
-        </Tutorial>
-      );
-    });
-    return (
-      <div className="tutorialList">{tutorialNodes}</div>
-    );
-  }
-});
-
-
-/**
- * [Tutorial : Tutoriel render]
- * @return {ReactClass}
- */
-var Tutorial = React.createClass({
-    rawMarkup: function() {
-      var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
-      return { __html: rawMarkup };
-    },
-    render: function() {
-      return (
-        <div className="blog-post">
-          <h2 className="blog-post-title tutorialAuthor">
-            {this.props.titleTuto}
-          </h2>
-          <span dangerouslySetInnerHTML={this.rawMarkup()} />
-          <p className="blog-post-meta">
-            {this.props.dateTuto} par <a href="#">{this.props.author}</a>
-          </p>
-        </div>
-      );
-    }
-});
-
 ReactDOM.render(
-    <TutorialBox url="/api/tutorials" pollInterval={1000000} />
+    <MainContent url="/api/tutorials" pollInterval={1000000} />
     ,document.getElementById('content')
   );

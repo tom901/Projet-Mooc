@@ -1,6 +1,10 @@
+
 module.exports = React.createClass({
-    login : function () {
-        this.props.parent.changeState({islogged :  true, isInLoginForm : false});
+    login : function (event) {
+        event.stopPropagation();
+        event.preventDefault()
+        ReactDOM.render(<div>Vous êtes connecté</div>, document.getElementById('body'));
+        this.props.parent.setLogged();
     },
     render : function(){
         return (
@@ -18,7 +22,7 @@ module.exports = React.createClass({
                                         <a className="btn btn-theme btn-link" href="http://insta2.paracamplus.com//authenticate/sendlink" target="_blank"> Mot de passe oublier ?</a>
                                     </span>
                                 </label>
-                                <button className="btn btn-theme btn-block" onClick={this.login()} type="submit"><i className="fa fa-lock"></i> CONNEXION </button>
+                                <button className="btn btn-theme btn-block" onClick={this.login} type="submit"><i className="fa fa-lock"></i> CONNEXION </button>
                                 <hr />
                                 <div className="centered">
                                     <p>Ou connectez vous avec un compte Google</p>

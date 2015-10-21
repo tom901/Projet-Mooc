@@ -1,6 +1,28 @@
+var LoginPage = require('./loginform.js');
 module.exports = React.createClass({
-    triggerClick : function(name){
-      this.props.parent.handleClicked();
+    getInitialState: function(){
+        return { islogged :  false, isInLoginForm : false};
+    },
+    loadLoginView : function(){
+        this.setState({islogged :  true, isInLoginForm : false},function(argument) {
+            ReactDOM.render(<LoginPage parent={this} />, document.getElementById('body'));
+        });
+    },
+    triggerClick: function(){
+        this.setState({islogged :  false, isInLoginForm : true},function() {
+            this.loadLoginView();
+        });
+    },
+    componentDidMount: function(prevProps, prevState) {
+        alert('componentDidMount --- componentDidMount');
+        if (!this.state.islogged) {
+            $( "#nav-controlled" ).hide();
+        }else {
+            $( "#nav-controlled" ).show();
+        }
+    },
+    componentDidUpdate: function(prevProps, prevState) {
+        alert('componentDidUpdate --- componentDidUpdate');
     },
     render : function(){
         return (
