@@ -7,7 +7,7 @@ module.exports = function(grunt) {
       livereload: true,
       },
       react: {
-        files: ['react_components/*.js','public/css/*.css'],
+        files: ['react_components/*.js'],
         tasks: ['browserify']
       },
       express :{

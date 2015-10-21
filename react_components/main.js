@@ -133,7 +133,7 @@ var MainContent = React.createClass({
 
 
     var itemsMenu = [
-                        { name: "PageHome",label : "Accueil", isDropDown:false },
+                        { name: "PageHomeConnected",label : "Accueil", isDropDown:false },
                         { name:"Exercices",label : "Exercices", isDropDown : true, subItems:[{ name: "ConsultExercices",label:"Consulter les exercices"},{ name: "ConsultCorrect",label:"Consulter les corrections"}]},
                         { name:"PageHistorique",label : "Historique", isDropDown:false },
                         { name:"PageProfil", label:"Profil",isDropDown:true,subItems:[{ name: "EditProfile",label:"Modifier mon profil"},{ name: "LogOut",label:"Déconnexion"}]}

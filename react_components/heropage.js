@@ -1,30 +1,32 @@
+
 var LoginPage = require('./loginform.js');
 module.exports = React.createClass({
     getInitialState: function(){
         return { islogged :  false, isInLoginForm : false};
     },
     loadLoginView : function(){
-        this.setState({islogged :  true, isInLoginForm : false},function(argument) {
-            ReactDOM.render(<LoginPage parent={this} />, document.getElementById('body'));
+        var self = this;
+        self.setState({islogged :  true, isInLoginForm : false},function(argument) {
+            ReactDOM.render(<LoginPage parent={self} master={self.props.parent}/>, document.getElementById('body'));
         });
+    },
+    setLogged: function () {
+        $( "#nav-controlled" ).show();
     },
     triggerClick: function(){
-        this.setState({islogged :  false, isInLoginForm : true},function() {
-            this.loadLoginView();
+        var self = this;
+        self.setState({islogged :  false, isInLoginForm : true},function() {
+            self.loadLoginView();
         });
     },
-    componentDidMount: function(prevProps, prevState) {
-        alert('componentDidMount --- componentDidMount');
-        if (!this.state.islogged) {
-            $( "#nav-controlled" ).hide();
-        }else {
-            $( "#nav-controlled" ).show();
+    statics : {
+        getCurrentState :function () {
+            var self = this;
+            return self;
         }
     },
-    componentDidUpdate: function(prevProps, prevState) {
-        alert('componentDidUpdate --- componentDidUpdate');
-    },
     render : function(){
+        var self = this;
         return (
             <div id="dynamicHero">
                 <section id="hero-area">
@@ -45,7 +47,7 @@ module.exports = React.createClass({
                                         </b>
                                     </h2>
                                     <a className="btn-lines dark light animated  fadeInUp animated btn btn-default"
-                                        onClick={this.triggerClick}>Connexion
+                                        onClick={self.triggerClick}>Connexion
                                     </a>
                                     <a className="btn-lines dark light animated  fadeInUp animated btn btn-primary"
                                         href="https://programmation-recursive-2.appspot.com/register" target="_blank">Inscription

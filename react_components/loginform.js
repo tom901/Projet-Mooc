@@ -1,9 +1,15 @@
+/**
+ * [PageHomeConnected Page si connecté]
+ * @param  {file} './connected.js' [fichier du composant]
+ * @return {ReactClass}                  [Composant ReactJS]
+ */
+var PageHomeConnected = require('./connected.js');
 
 module.exports = React.createClass({
     login : function (event) {
         event.stopPropagation();
         event.preventDefault()
-        ReactDOM.render(<div>Vous êtes connecté</div>, document.getElementById('body'));
+        ReactDOM.render(<PageHomeConnected />, document.getElementById('body'));
         this.props.parent.setLogged();
     },
     render : function(){

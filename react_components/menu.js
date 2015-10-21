@@ -5,11 +5,21 @@ var EditProfile = require('./editprofilepage.js');
 var LogOut = require('./logout.js');
 var PageHistorique = require('./historiquepage.js');
 
+/**
+ * [PageHomeConnected Page si connecté]
+ * @param  {file} './connected.js' [fichier du composant]
+ * @return {ReactClass}                  [Composant ReactJS]
+ */
+var PageHomeConnected = require('./connected.js');
+
 var RenderComponent = require('./renderComponent.js');
 
 var MenuDropDown = React.createClass({
     chooseClick : function(name){
         this.props.parent.clicked(name);
+    },
+    componentDidMount: function(prevProps, prevState) {
+        $( "#nav-controlled" ).hide();
     },
     render : function(){
         var self = this;
