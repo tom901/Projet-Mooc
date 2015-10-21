@@ -119,18 +119,15 @@ module.exports  = React.createClass({
     shouldComponentUpdate: function(nextProps, nextState) {
         this.loadContenu(nextState.focused);
         return true;
-    }
-
-  },
+    },
 
   loadContenu : function(focused){
     ReactDOM.render(<RenderComponent component = {eval(focused)} />, document.getElementById('body'));
-
   },
 
   getInitialState: function(){
 
-    return { focused: "PageHistorique" };
+    return { focused: "PageHome" };
 
   },
 
