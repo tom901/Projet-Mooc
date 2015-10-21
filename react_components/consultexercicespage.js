@@ -16,12 +16,20 @@
 
                     <div className="col-md-3 col-sm-6 hero-feature">
                         <div className="thumbnail">
+<<<<<<< HEAD
                             <img style={{width:'50px'}} src="./img/img_js.png" alt="" />
+=======
+                            <img style={{width:'50px'}} src="./images/Logo-JS.png" alt="" />
+>>>>>>> copie_master2
                             <div className="caption">
                                 <h3>Exercice 1</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <p>
+<<<<<<< HEAD
                                     <a href="#" className="btn btn-primary">"Commencer l'exercice"</a> <a href="#" className="btn btn-default">Correction</a>
+=======
+                                    <a href="#" className="btn btn-primary">{"Commencer l'exercice"}</a> <a href="#" className="btn btn-default">Voir la correction</a>
+>>>>>>> copie_master2
                                 </p>
                             </div>
                         </div>
@@ -29,12 +37,20 @@
 
                     <div className="col-md-3 col-sm-6 hero-feature">
                         <div className="thumbnail">
+<<<<<<< HEAD
                             <img style={{width:'50px'}} src="./img/img_js.png" alt="" />
+=======
+                            <img style={{width:'50px'}} src="./images/Logo-JS.png" alt="" />
+>>>>>>> copie_master2
                             <div className="caption">
                                 <h3>Exercice 2</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <p>
+<<<<<<< HEAD
                                     <a href="#" className="btn btn-primary">"Commencer l'exercice"</a> <a href="#" className="btn btn-default">Correction</a>
+=======
+                                    <a href="#" className="btn btn-primary">{"Commencer l'exercice"}</a> <a href="#" className="btn btn-default">Voir la correction</a>
+>>>>>>> copie_master2
                                 </p>
                             </div>
                         </div>
@@ -42,12 +58,20 @@
 
                     <div className="col-md-3 col-sm-6 hero-feature">
                         <div className="thumbnail">
+<<<<<<< HEAD
                             <img style={{width:'50px'}} src="./img/img_js.png" alt="" />
+=======
+                            <img style={{width:'50px'}} src="./images/Logo-JS.png" alt="" />
+>>>>>>> copie_master2
                             <div className="caption">
                                 <h3>Exercice 3</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <p>
+<<<<<<< HEAD
                                     <a href="#" className="btn btn-primary">"Commencer l'exercice"</a> <a href="#" className="btn btn-default">Correction</a>
+=======
+                                    <a href="#" className="btn btn-primary">{"Commencer l'exercice"}</a> <a href="#" className="btn btn-default">Voir la correction</a>
+>>>>>>> copie_master2
                                 </p>
                             </div>
                         </div>
@@ -55,12 +79,20 @@
 
                     <div className="col-md-3 col-sm-6 hero-feature">
                         <div className="thumbnail">
+<<<<<<< HEAD
                             <img style={{width:'50px'}} src="./img/img_js.png" alt="" />
+=======
+                            <img style={{width:'50px'}} src="./images/Logo-JS.png" alt="" />
+>>>>>>> copie_master2
                             <div className="caption">
                                 <h3>Exercice 4</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <p>
+<<<<<<< HEAD
                                     <a href="#" className="btn btn-primary">"Commencer l'exercice"</a> <a href="#" className="btn btn-default">Correction</a>
+=======
+                                    <a href="#" className="btn btn-primary">{"Commencer l'exercice"}</a> <a href="#" className="btn btn-default">Voir la correction</a>
+>>>>>>> copie_master2
                                 </p>
                             </div>
                         </div>
