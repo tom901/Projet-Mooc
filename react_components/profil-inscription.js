@@ -29,7 +29,12 @@ module.exports  = React.createClass({
 
 	    $("#passwordConfirm").each(function(){
 	        $(this).on("change", function(){
-	            password = traitementVariable($(this).val(), "passwordConfirm", "^[a-zA-Z 0-9@_-]+$");
+	            if($(this).val() != $("#password").val()){
+                    error("la Confirmation du mot de passe", "#passwordConfirm", "#passwordConfirmValid" ,".form-group", ".glyphicon");
+                }
+                else{
+                    passwordConfirm = traitementVariable($(this).val(), "passwordConfirm", "^[a-zA-Z 0-9@_-]+$");
+                }
 	        });
 	    });
 
