@@ -12,6 +12,67 @@ module.exports = React.createClass({
         this.props.parent.setLogged();
         ReactDOM.render(<PageHomeConnected />, document.getElementById('body'));
     },
+     getInitialState: function(){
+        return { isCharged :  false};
+    },
+
+    componentDidMount: function() {
+
+        var password, email;
+
+        $("#password").each(function(){
+            $(this).on("change", function(){
+                password = traitementVariable($(this).val(), "password", "^[a-zA-Z 0-9@_-]{4,}$");
+            });
+        });
+        $("#email").each(function(){
+            $(this).on("change", function(){
+                email = traitementVariable($(this).val(), "email", "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$");
+            });
+        });
+
+        function traitementVariable(variable, champs, regex){
+          //var regex = /^[a-zA-Z ]+$/;
+            if(variable == ""){
+                error("le "+champs, "#"+champs, "#"+champs+"Valid" ,".form-group", ".glyphicon");
+            }
+            else{
+              var pattern = new RegExp(regex);
+              if(!pattern.test(variable)){
+                    warning("format du "+champs, "#"+champs, "#"+champs+"Valid" ,".form-group", ".glyphicon");
+                }
+                else{
+                    success(""+champs, "#"+champs, "#"+champs+"Valid", ".form-group", ".glyphicon");
+                    return variable;
+                }
+            }
+        
+            
+        }
+
+
+         //fonction générique d'avertissement tiré de boostrap
+        function warning(name, balise, balise2, classe1, classe2){
+            $("#errorForm").html("<em>Attention le "+name+" n'est pas valide!</em>");
+            $(balise).closest(classe1).removeClass('has-error has-feedback').addClass('has-warning has-feedback');
+            $(balise2).closest(classe2).removeClass('glyphicon-remove form-control-feedback').addClass('glyphicon-warning-sign form-control-feedback');
+        }
+        
+        //fonction générique d'erreur tiré de boostrap
+        function error(name, balise, balise2, classe1, classe2){
+            $("#errorForm").html("<em>Veuillez remplir "+name+" !</em>");
+            $(balise).closest(classe1).addClass('has-error has-feedback');
+            $(balise2).closest(classe2).removeClass('glyphicon-warning-sign form-control-feedback').addClass('glyphicon-remove form-control-feedback');
+        }
+        
+        //fonction générique de succès tiré de boostrap
+        function success(name, balise, balise2, classe1,classe2){
+            // $("#errorForm").html("<em>"+name+" envoy&eacute; avec succ&egrave;s ! </em>");
+            $(balise).closest(classe1).removeClass('has-error has-feedback').removeClass('has-warning has-feedback').addClass('has-success has-feedback');
+            $(balise2).closest(classe2).removeClass('glyphicon-remove form-control-feedback').removeClass('glyphicon-warning-sign form-control-feedback').addClass('glyphicon-ok form-control-feedback');
+        }
+
+    },
     render : function(){
         return (
             <div id="login-page">
@@ -20,9 +81,15 @@ module.exports = React.createClass({
                         <form className="form-login" action="index.html">
                             <h2 className="form-login-heading">Se connecter</h2>
                             <div className="login-wrap">
-                                <input type="text" className="form-control" placeholder="Adresse mail ou Identifiant" autofocus="" />
-                                <br />
-                                <input type="password" className="form-control" placeholder="Mot de passe" />
+                                <div className="form-group">
+                                    <input type="text" className="form-control" placeholder="Adresse mail ou Identifiant" id="email" autofocus="" />
+                                    <span id="emailValid" className="glyphicon pull-right"></span>
+                                    <br />
+                                </div>
+                                <div className="form-group">
+                                    <input type="password" className="form-control" placeholder="Mot de passe" id="password" />
+                                    <span id="passwordValid" className="glyphicon pull-right"></span>
+                                </div>
                                 <label className="checkbox">
                                     <span className="pull-right">
                                         <a className="btn btn-theme btn-link" href="http://insta2.paracamplus.com//authenticate/sendlink" target="_blank"> Mot de passe oublier ?</a>
