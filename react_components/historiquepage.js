@@ -70,8 +70,8 @@ var HistoriqueDetail = require('./historiquedetail.js');
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td  onClick={this.clickDetailHistorique} className="text-center">0</td>
+									<tr onClick={this.clickDetailHistorique} >
+										<td className="text-center">0</td>
 										<td>
 											<a href="basic_table.html#">Création d'une page HTML</a>
 										</td>
