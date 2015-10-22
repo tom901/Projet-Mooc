@@ -16,7 +16,9 @@
     "body-parser": "^1.4.3",
     "express": "^4.13.3",
     "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react-dom": "^0.14.0",
+    "react-ace": "^2.6.0",
+    "brace": "^0.5.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
