@@ -20,7 +20,7 @@ var HistoriqueDetail = require('./historiquedetail.js');
 		return (
 			<div className="container">
 				<div className="row">
-					<div className="col-md-12">
+					<div className="col-md-12 text-history-page">
 					<br/>
 						<p>
 							Voici vos interactions reliées à la série d’exercices (identifiée par insta2) avec l’infrastructure CodeGradX (classées par ordre antichronologique). Vous pouvez également contempler votre tableau de chasse récapitulatif.
@@ -40,32 +40,32 @@ var HistoriqueDetail = require('./historiquedetail.js');
 							<h4> <i className="fa fa-angle-right"> Historique des Exercices</i>
 							</h4>
 							<br/>
-							<table className="table table-bordered table-advance table-hover">
+							<table className="table table-bordered table-advance table-hover background-table-history">
 								
 								<thead>
 									<tr>
 										<th> <i className="fa fa-bookmark"></i>
-											Identifiant
+											<span> Identifiant</span>
 										</th>
 										<th>
 											<i className="fa fa-bullhorn"></i>
-											Nom de l'exercice
+											<span> Nom de l'exercice</span>
 										</th>
 										<th className="hidden-phone">
 											<i className="fa fa-question-circle"></i>
-											Description
+											<span> Description</span>
 										</th>
 										<th>
 											<i className="fa fa-bookmark"></i>
-											Date
+											<span> Date</span>
 										</th>
 										<th>
 											<i className=" fa fa-edit"></i>
-											Note
+											<span> Note</span>
 										</th>
 										<th>
 											<i className=" fa fa-edit"></i>
-											Status
+											<span> Status</span>
 										</th>
 									</tr>
 								</thead>

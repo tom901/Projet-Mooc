@@ -628,3 +628,9 @@ label.control-label{
     margin-top: -32px;
     margin-left: -30px;
 }
+.background-table-history{
+    background-color: white;
+}
+.text-history-page{
+    font-size: 18px;
+}
