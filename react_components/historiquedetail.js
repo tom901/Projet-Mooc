@@ -25,6 +25,7 @@ require('brace/theme/monokai')
 				    name="UNIQUE_ID_OF_DIV"
 				    editorProps={{$blockScrolling: true}}
 				    width = "100%"
+				    fontSize = {16}
 				/>
 				<br/>
 				<p>Je vérifie votre code avec mes tests.</p>
