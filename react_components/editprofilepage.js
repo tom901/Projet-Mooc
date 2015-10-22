@@ -152,11 +152,12 @@ module.exports  = React.createClass({
     render : function(){
         return(
               <div className="container">
-                <h1>Mon Profil</h1>
+                <br/>
                 <div className="row">
 
                   <div className="col-lg-3">
                     <div className="text-center">
+                    <h1>Mon Profil</h1>
                       <img src="//placehold.it/100" className="avatar img-circle" alt="avatar"/>
                       <h6>Upload a different photo...</h6>
                       <a href="http://fr.gravatar.com/" className="form-control btn btn-primary">Modifier</a>
@@ -164,51 +165,79 @@ module.exports  = React.createClass({
                   </div>
 
                   <div className="col-lg-9 personal-info">
-                    <h3>Mes informations personnelles</h3>
+                    <h2>Mes informations personnelles</h2>
                     <br/>
                     <form className="form-horizontal tutorialForm" role="form" onSubmit={this.handleSubmit}>
-                      <div className="form-group">
-                        <label className="col-lg-3 control-label">Pseudo:</label>
-                        <div className="col-lg-9">
-                          <input className="form-control" type="text" value="janeuser" id="pseudo" />
-                          <span id="pseudoValid" className="glyphicon pull-right"></span>
-                        </div>
-                      </div>
-                      <div className="form-group">
-                        <label className="col-lg-3 control-label">Nom:</label>
-                        <div className="col-lg-9">
-                          <input className="form-control" type="text" value="Jane" id="nom" />
-                          <span id="nomValid" className="glyphicon pull-right"></span>
-                          </div>
-                      </div>
-                      <div className="form-group">
-                        <label className="col-lg-3 control-label">Prénom:</label>
-                        <div className="col-lg-9">
-                          <input className="form-control" type="text" value="Bishop" id="prenom"/>
-                          <span id="prenomValid" className="glyphicon pull-right"></span>
-                          </div>
-                      </div>
-                      <div className="form-group">
-                        <label className="col-lg-3 control-label">Email:</label>
-                        <div className="col-lg-9">
-                          <input className="form-control" type="text" id="email" required="required" />
-                          <span id="emailValid" className="glyphicon pull-right"></span>
-                          </div>
-                      </div>
-                      <div className="form-group">
-                        <label className="col-lg-3 control-label">Mot de passe:</label>
-                        <div className="col-lg-9">
-                          <input className="form-control" type="password" id="password" required="required" />
-                          <span id="passwordValid" className="glyphicon pull-right"></span>
-                          </div>
-                      </div>
-                      <div className="form-group">
-                        <label className="col-lg-3 control-label">Confirmation du mot de passe:</label>
-                        <div className="col-lg-9">
-                          <input className="form-control" type="password" id="passwordConfirm" required="required" />
-                          <span id="passwordConfirmValid" className="glyphicon pull-right"></span>
-                          </div>
-                      </div>
+                      <table className="table table-striped">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div className="form-group">
+                                <label className="col-lg-3 control-label">Pseudo:</label>
+                                <div className="col-lg-9">
+                                  <input className="form-control" type="text" value="janeuser" id="pseudo" />
+                                  <span id="pseudoValid" className="glyphicon pull-right"></span>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div className="form-group">
+                                <label className="col-lg-3 control-label">Nom:</label>
+                                <div className="col-lg-9">
+                                  <input className="form-control" type="text" value="Jane" id="nom" />
+                                  <span id="nomValid" className="glyphicon pull-right"></span>
+                                  </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div className="form-group">
+                                <label className="col-lg-3 control-label">Prénom:</label>
+                                <div className="col-lg-9">
+                                  <input className="form-control" type="text" value="Bishop" id="prenom"/>
+                                  <span id="prenomValid" className="glyphicon pull-right"></span>
+                                  </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div className="form-group">
+                                <label className="col-lg-3 control-label">Email:</label>
+                                <div className="col-lg-9">
+                                  <input className="form-control" type="text" id="email" required="required" />
+                                  <span id="emailValid" className="glyphicon pull-right"></span>
+                                  </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div className="form-group">
+                                <label className="col-lg-3 control-label">Mot de passe:</label>
+                                <div className="col-lg-9">
+                                  <input className="form-control" type="password" id="password" required="required" />
+                                  <span id="passwordValid" className="glyphicon pull-right"></span>
+                                  </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div className="form-group">
+                                <label className="col-lg-3 control-label">Confirmation du mot de passe:</label>
+                                <div className="col-lg-9">
+                                  <input className="form-control" type="password" id="passwordConfirm" required="required" />
+                                  <span id="passwordConfirmValid" className="glyphicon pull-right"></span>
+                                  </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                       <div className="form-group">
                         <label className="col-lg-3 control-label">
                         </label>
@@ -219,6 +248,8 @@ module.exports  = React.createClass({
                           <input type="reset" className="btn btn-primary" />
                         </div>
                       </div>
+                            
+                       
                     </form>
                   </div>
                 </div>
