@@ -154,7 +154,7 @@ module.exports  = React.createClass({
               <div className="container">
                 <div className="row">
                   <br/>
-                  <div className="col-lg-3 profile">
+                  <div className="col-md-3 profile">
                       <div className="text-center">
                         <img src={"https://s.gravatar.com/avatar/" + md5('pianiste.evo@gmail.com') + "?s=100" } className="avatar img-circle" alt="avatar"/>
                         <h2 className="user-name">John Smith</h2>
@@ -162,20 +162,20 @@ module.exports  = React.createClass({
                       </div>
                   </div>
                     
-                  <div className="col-lg-9 personal-info">
+                  <div className="col-md-9 personal-info">
                     <div className="blanc">
                       <h4>Mes informations personnelles</h4>
                       <br/>
                       <form className="form-horizontal" role="form" onSubmit={this.handleSubmit}>
                         <div className="form-group">
-                          <div className="col-lg-12">
+                          <div className="col-md-12">
                             <label className="control-label">Pseudo</label>
                             <input className="form-control input-lg" type="text" value="janeuser" id="pseudo" />
                             <span id="pseudoValid" className="glyphicon pull-right"></span>
                           </div>
                         </div>
                         <div className="form-group">
-                          <div className="col-lg-12">
+                          <div className="col-md-12">
                             <label className="control-label">Nom</label>
                             <input className="form-control input-lg" type="text" value="Jane" id="nom" />
                             <span id="nomValid" className="glyphicon pull-right">
@@ -184,35 +184,35 @@ module.exports  = React.createClass({
                           </div>
                         </div>
                         <div className="form-group">
-                          <div className="col-lg-12">
+                          <div className="col-md-12">
                             <label className="control-label">Prénom</label>
                             <input className="form-control input-lg" type="text" value="Bishop" id="prenom"/>
                             <span id="prenomValid" className="glyphicon pull-right"></span>
                           </div>
                         </div>
                         <div className="form-group">
-                          <div className="col-lg-12">
+                          <div className="col-md-12">
                             <label className="control-label">Email</label>
                             <input className="form-control input-lg" type="text" id="email" required="required" />
                             <span id="emailValid" className="glyphicon pull-right"></span>
                           </div>
                         </div>
                         <div className="form-group">
-                          <div className="col-lg-12">
+                          <div className="col-md-12">
                             <label className="control-label">Mot de passe</label>
                             <input className="form-control input-lg" type="password" id="password" required="required" />
                             <span id="passwordValid" className="glyphicon pull-right"></span>
                           </div>
                         </div>
                         <div className="form-group">
-                          <div className="col-lg-12">
+                          <div className="col-md-12">
                             <label className="control-label">Confirmation du mot de passe</label>
                             <input className="form-control input-lg" type="password" id="passwordConfirm" required="required" />
                             <span id="passwordConfirmValid" className="glyphicon pull-right"></span>
                           </div>
                         </div>
                         <div className="form-group text-center">
-                          <div className="col-lg-12">
+                          <div className="col-md-12">
                             <label className="control-label"></label>
                             <input type="button" className="btn btn-default" id="valider" value="Sauvegarder"/> &nbsp;
                             <span>
