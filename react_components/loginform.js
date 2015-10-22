@@ -26,6 +26,7 @@ module.exports = React.createClass({
                 console.log(res);
                 console.log(err);
                 self.props.parent.setLogged();
+                localStorage.setItem('focusState', JSON.stringify({ focused : "PageHomeConnected" }));
                 ReactDOM.render(<PageHomeConnected />, document.getElementById('body'));
     		});
         } else {
