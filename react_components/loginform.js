@@ -7,6 +7,7 @@ var PageHomeConnected = require('./connected.js');
 
 module.exports = React.createClass({
     login : function (event) {
+        var self = this;
         event.stopPropagation();
         event.preventDefault();
 
@@ -24,8 +25,8 @@ module.exports = React.createClass({
     		Authentification(email, password,  function(res,err) {
                 console.log(res);
                 console.log(err);
+                self.props.parent.setLogged();
                 ReactDOM.render(<PageHomeConnected />, document.getElementById('body'));
-                this.props.parent.setLogged();
     		});
         } else {
             swal({
