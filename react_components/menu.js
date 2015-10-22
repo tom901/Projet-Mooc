@@ -20,6 +20,11 @@ var MenuDropDown = React.createClass({
     },
     componentDidMount: function(prevProps, prevState) {
         $( "#nav-controlled" ).hide();
+
+        var focusState = JSON.parse(localStorage.getItem('focusState') || '{ "focused": "PageHome" }');
+        if(focusState.focused != "PageHome"){
+            $( "#nav-controlled" ).show();
+        }
     },
     render : function(){
         var self = this;
@@ -68,7 +73,11 @@ module.exports  = React.createClass({
         ReactDOM.render(<RenderComponent component = {eval(focused)} />, document.getElementById('body'));
     },
     getInitialState: function(){
-        return { focused: "PageHome" };
+        var focusState = JSON.parse(localStorage.getItem('focusState') || '{ "focused": "PageHome" }');
+        if(focusState.focused != "PageHome"){
+            $( "#nav-controlled" ).show();
+        }
+        return focusState;
 
     },
     dateToday : function(){

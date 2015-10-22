@@ -1,8 +1,14 @@
+ var StartExercice = require('./commencerExercices.js');
  module.exports = React.createClass({
     
-    render : function(){ 
-        return (
+    loadStartExerciceView : function () {
+        ReactDOM.render(<StartExercice />, document.getElementById('body'));
+    },
 
+    render : function(){ 
+        var self = this;
+        return (
+            
             <div className="container">
 
                 <div className="row">
@@ -21,7 +27,7 @@
                                 <h3>Exercice 1</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <p>
-                                    <a href="#" className="btn btn-primary">{"Commencer l'exercice"}</a> <a href="#" className="btn btn-default">Voir la correction</a>
+                                    <a onClick={self.loadStartExerciceView} className="btn btn-primary">{"Commencer l'exercice"}</a> <a href="#" className="btn btn-default">Voir la correction</a>
                                 </p>
                             </div>
                         </div>
