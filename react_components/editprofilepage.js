@@ -179,7 +179,7 @@ module.exports  = React.createClass({
                             <label className="control-label">Nom</label>
                             <input className="form-control input-lg" type="text" value="Jane" id="nom" />
                             <span id="nomValid" className="glyphicon pull-right">
-                              <i className="fa fa-user fa-lg text-white"></i>
+                              <i className="fa fa-user fa-lg text-white fa-custom"></i>
                             </span>
                           </div>
                         </div>
