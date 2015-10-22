@@ -84,7 +84,6 @@ module.exports = React.createClass({
                                 <div className="form-group">
                                     <input type="text" className="form-control" placeholder="Adresse mail ou Identifiant" id="email" autofocus="" />
                                     <span id="emailValid" className="glyphicon pull-right"></span>
-                                    <br />
                                 </div>
                                 <div className="form-group">
                                     <input type="password" className="form-control" placeholder="Mot de passe" id="password" />
