@@ -10,16 +10,41 @@ module.exports = React.createClass({
         event.stopPropagation();
         event.preventDefault();
         this.props.parent.setLogged();
-        ReactDOM.render(<PageHomeConnected />, document.getElementById('body'));
+        var password = $("#password").val();
+        var email = $("#email").val();
+        console.log(this.state);
+        if (this.state.passwordFullfiled
+        && this.state.passwordFullfiled
+        && password != ""
+        && email != "") {
+    		Authentification(email, password,  function(res,err) {
+                console.log(res);
+                console.log(err);
+                alert('lol');
+                ReactDOM.render(<PageHomeConnected />, document.getElementById('body'));
+    		});
+        } else {
+            swal({
+                title: 'Hum...',
+                text: 'Vérifiez vos identifiants de connexion !',
+                type : 'error',
+                timer: 2000
+            });
+        }
+
     },
      getInitialState: function(){
-        return { isCharged :  false};
+        return {
+            isCharged :  false,
+            passwordFullfiled : false,
+            emailFullfiled : false
+        };
     },
 
     componentDidMount: function() {
+        var self = this;
 
         var password, email;
-
         $("#password").each(function(){
             $(this).on("change", function(){
                 password = traitementVariable($(this).val(), "password", "^[a-zA-Z 0-9@_-]{4,}$");
@@ -43,11 +68,21 @@ module.exports = React.createClass({
                 }
                 else{
                     success(""+champs, "#"+champs, "#"+champs+"Valid", ".form-group", ".glyphicon");
+                    switch (champs) {
+                        case "email":
+                            self.setState({emailFullfiled : true});
+                            break;
+                        case "password":
+                            self.setState({passwordFullfiled : true});
+                            break;
+                        default:
+
+                    }
                     return variable;
                 }
             }
-        
-            
+
+
         }
 
 
@@ -57,14 +92,14 @@ module.exports = React.createClass({
             $(balise).closest(classe1).removeClass('has-error has-feedback').addClass('has-warning has-feedback');
             $(balise2).closest(classe2).removeClass('glyphicon-remove form-control-feedback').addClass('glyphicon-warning-sign form-control-feedback');
         }
-        
+
         //fonction générique d'erreur tiré de boostrap
         function error(name, balise, balise2, classe1, classe2){
             $("#errorForm").html("<em>Veuillez remplir "+name+" !</em>");
             $(balise).closest(classe1).addClass('has-error has-feedback');
             $(balise2).closest(classe2).removeClass('glyphicon-warning-sign form-control-feedback').addClass('glyphicon-remove form-control-feedback');
         }
-        
+
         //fonction générique de succès tiré de boostrap
         function success(name, balise, balise2, classe1,classe2){
             // $("#errorForm").html("<em>"+name+" envoy&eacute; avec succ&egrave;s ! </em>");
@@ -94,7 +129,7 @@ module.exports = React.createClass({
                                         <a className="btn btn-theme btn-link" href="http://insta2.paracamplus.com//authenticate/sendlink" target="_blank"> Mot de passe oublier ?</a>
                                     </span>
                                 </label>
-                                <button className="btn btn-theme btn-block" onClick={this.login} type="submit"><i className="fa fa-lock"></i> CONNEXION </button>
+                                <button className="btn btn-theme btn-block" onClick={this.login} type="submit" id="connect-btn"><i className="fa fa-lock"></i> CONNEXION </button>
                                 <hr />
                                 <div className="centered">
                                     <p>Ou connectez vous avec un compte Google</p>
