@@ -7,6 +7,8 @@ body {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
+    /*background-color: #E3E7E8;*/
+    background-color: #e9eff3;
 }
 
 h1, .h1,
@@ -534,4 +536,95 @@ ul.sidebar-menu li a.active i {
 
 footer {
     margin: 50px 0;
+}
+
+.blanc{
+    background-color: white;
+    padding: 30px;
+}
+
+#valider, #annuler{
+    background-color: #414141!important;
+    border: none;
+    color: #fff;
+    padding: 20px 35px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 13px;
+    line-height: 1em;
+    text-transform: uppercase;
+    letter-spacing: normal;
+}
+
+label.control-label{
+    font-size: 14px!important;
+    margin-bottom: 5px!important;
+    font-weight: 600!important;
+    color: #404040!important;
+}
+
+.img-circle{
+    width: 150px;
+}
+
+.user-name{
+    font-size: 24px;
+    font-family: Merriweather, Georgia, "Times New Roman", Times, serif;
+    font-weight: 700;
+    line-height: 32px;
+    margin: 8px 0 0;
+    text-align: center;
+    word-break: break-word;
+    word-wrap: break-word;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/*#btnModify{
+    display: block;
+    margin: auto auto 24px auto;
+    max-width: 100%;
+    clear: both;
+    float: none;
+    padding: 8px 24px
+}*/
+
+#btnModify.btn{
+    background: white;
+    border-color: #c8d7e1;
+    border-style: solid;
+    border-width: 1px 1px 2px;
+    color: #2e4453;
+    cursor: pointer;
+    outline: 0;
+    overflow: hidden;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 21px;
+    border-radius: 4px!important;
+    padding: 7px 14px 9px;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 138px;
+}
+
+#btnModify:hover{
+    border-color: #a8bece;
+    color: #2e4453;
+}
+
+#btnModify.btn:focus{
+    /*border-color: #41F7DF;*/
+    border-color: #00aadc;
+    box-shadow: 0 0 0 2px #78dcfa;
+}
+.fa{
+    position: absolute;
+    margin-top: -32px;
+    margin-left: -30px;
 }

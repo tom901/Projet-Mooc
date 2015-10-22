@@ -152,105 +152,76 @@ module.exports  = React.createClass({
     render : function(){
         return(
               <div className="container">
-                <br/>
                 <div className="row">
-
-                  <div className="col-lg-3">
-                    <div className="text-center">
-                    <h1>Mon Profil</h1>
-                      <img src="//placehold.it/100" className="avatar img-circle" alt="avatar"/>
-                      <h6>Upload a different photo...</h6>
-                      <a href="http://fr.gravatar.com/" className="form-control btn btn-primary">Modifier</a>
-                    </div>
-                  </div>
-
-                  <div className="col-lg-9 personal-info">
-                    <h2>Mes informations personnelles</h2>
-                    <br/>
-                    <form className="form-horizontal tutorialForm" role="form" onSubmit={this.handleSubmit}>
-                      <table className="table table-striped">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div className="form-group">
-                                <label className="col-lg-3 control-label">Pseudo:</label>
-                                <div className="col-lg-9">
-                                  <input className="form-control" type="text" value="janeuser" id="pseudo" />
-                                  <span id="pseudoValid" className="glyphicon pull-right"></span>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="form-group">
-                                <label className="col-lg-3 control-label">Nom:</label>
-                                <div className="col-lg-9">
-                                  <input className="form-control" type="text" value="Jane" id="nom" />
-                                  <span id="nomValid" className="glyphicon pull-right"></span>
-                                  </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="form-group">
-                                <label className="col-lg-3 control-label">Prénom:</label>
-                                <div className="col-lg-9">
-                                  <input className="form-control" type="text" value="Bishop" id="prenom"/>
-                                  <span id="prenomValid" className="glyphicon pull-right"></span>
-                                  </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="form-group">
-                                <label className="col-lg-3 control-label">Email:</label>
-                                <div className="col-lg-9">
-                                  <input className="form-control" type="text" id="email" required="required" />
-                                  <span id="emailValid" className="glyphicon pull-right"></span>
-                                  </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="form-group">
-                                <label className="col-lg-3 control-label">Mot de passe:</label>
-                                <div className="col-lg-9">
-                                  <input className="form-control" type="password" id="password" required="required" />
-                                  <span id="passwordValid" className="glyphicon pull-right"></span>
-                                  </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="form-group">
-                                <label className="col-lg-3 control-label">Confirmation du mot de passe:</label>
-                                <div className="col-lg-9">
-                                  <input className="form-control" type="password" id="passwordConfirm" required="required" />
-                                  <span id="passwordConfirmValid" className="glyphicon pull-right"></span>
-                                  </div>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <div className="form-group">
-                        <label className="col-lg-3 control-label">
-                        </label>
-                        <div className="col-lg-9">
-                          <input type="button" className="btn btn-primary" id="valider" value="Sauvegarder"/> &nbsp;
-                          <span>
-                          </span>
-                          <input type="reset" className="btn btn-primary" />
-                        </div>
+                  <br/>
+                  <div className="col-lg-3 profile">
+                      <div className="text-center">
+                        <img src={"https://s.gravatar.com/avatar/" + md5('pianiste.evo@gmail.com') + "?s=100" } className="avatar img-circle" alt="avatar"/>
+                        <h2 className="user-name">John Smith</h2>
+                        <a href="http://fr.gravatar.com/" className="form-control btn" id="btnModify">Modifier</a>
                       </div>
-                            
-                       
-                    </form>
+                  </div>
+                    
+                  <div className="col-lg-9 personal-info">
+                    <div className="blanc">
+                      <h4>Mes informations personnelles</h4>
+                      <br/>
+                      <form className="form-horizontal" role="form" onSubmit={this.handleSubmit}>
+                        <div className="form-group">
+                          <div className="col-lg-12">
+                            <label className="control-label">Pseudo</label>
+                            <input className="form-control input-lg" type="text" value="janeuser" id="pseudo" />
+                            <span id="pseudoValid" className="glyphicon pull-right"></span>
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <div className="col-lg-12">
+                            <label className="control-label">Nom</label>
+                            <input className="form-control input-lg" type="text" value="Jane" id="nom" />
+                            <span id="nomValid" className="glyphicon pull-right">
+                              <i className="fa fa-user fa-lg text-white"></i>
+                            </span>
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <div className="col-lg-12">
+                            <label className="control-label">Prénom</label>
+                            <input className="form-control input-lg" type="text" value="Bishop" id="prenom"/>
+                            <span id="prenomValid" className="glyphicon pull-right"></span>
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <div className="col-lg-12">
+                            <label className="control-label">Email</label>
+                            <input className="form-control input-lg" type="text" id="email" required="required" />
+                            <span id="emailValid" className="glyphicon pull-right"></span>
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <div className="col-lg-12">
+                            <label className="control-label">Mot de passe</label>
+                            <input className="form-control input-lg" type="password" id="password" required="required" />
+                            <span id="passwordValid" className="glyphicon pull-right"></span>
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <div className="col-lg-12">
+                            <label className="control-label">Confirmation du mot de passe</label>
+                            <input className="form-control input-lg" type="password" id="passwordConfirm" required="required" />
+                            <span id="passwordConfirmValid" className="glyphicon pull-right"></span>
+                          </div>
+                        </div>
+                        <div className="form-group text-center">
+                          <div className="col-lg-12">
+                            <label className="control-label"></label>
+                            <input type="button" className="btn btn-default" id="valider" value="Sauvegarder"/> &nbsp;
+                            <span>
+                            </span>
+                            <input type="reset" className="btn btn-default" id="annuler" />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
