@@ -9,9 +9,13 @@ module.exports = React.createClass({
     login : function (event) {
         event.stopPropagation();
         event.preventDefault();
-        this.props.parent.setLogged();
+
         var password = $("#password").val();
         var email = $("#email").val();
+
+        var email = "bilel.bekkouche@gmail.com";
+        var password = "bekkouche99";
+
         console.log(this.state);
         if (this.state.passwordFullfiled
         && this.state.passwordFullfiled
@@ -20,15 +24,15 @@ module.exports = React.createClass({
     		Authentification(email, password,  function(res,err) {
                 console.log(res);
                 console.log(err);
-                alert('lol');
                 ReactDOM.render(<PageHomeConnected />, document.getElementById('body'));
+                this.props.parent.setLogged();
     		});
         } else {
             swal({
                 title: 'Hum...',
                 text: 'Vérifiez vos identifiants de connexion !',
                 type : 'error',
-                timer: 2000
+                timer: 5000
             });
         }
 
@@ -36,8 +40,8 @@ module.exports = React.createClass({
      getInitialState: function(){
         return {
             isCharged :  false,
-            passwordFullfiled : false,
-            emailFullfiled : false
+            passwordFullfiled : true,
+            emailFullfiled : true
         };
     },
 
