@@ -1,8 +1,25 @@
+var brace  = require('brace');
+var AceEditor  = require('react-ace');
+require('brace/mode/javascript')
+require('brace/theme/monokai')
+
  module.exports = React.createClass({
+ 	updateCode : function(newText){
+ 		console.log(newText);
+ 	},
 	render : function(){ 
 		return (
-			<div style={{margin:'auto',width:'400px'}} >
-			<h2> La page commencer un exercice </h2>
+			<div className='container'>
+			<h2> Commencer votre exercice : </h2>
+			<AceEditor
+				    mode="javascript"
+				    theme="monokai"
+				    onChange={this.updateCode}
+				    name="UNIQUE_ID_OF_DIV"
+				    editorProps={{$blockScrolling: true}}
+				    width = "100%"
+				    fontSize = {16}
+				/>
 			</div>
 		)
 	}
