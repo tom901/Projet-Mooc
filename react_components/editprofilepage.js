@@ -1,4 +1,13 @@
 module.exports  = React.createClass({
+    getInitialState: function(){
+      return {
+        mail: "pianiste.evo@gmail.com",
+        nom: "Jane",
+        prenom: "Bishop",
+        pseudo: "janeuser"
+      };
+    },
+
     componentDidMount: function() {
 
         var nom, prenom, pseudo, password, passwordConfirm, email;
@@ -150,81 +159,148 @@ module.exports  = React.createClass({
  
     },
     render : function(){
-        return(
-              <div className="container">
-                <div className="row">
-                  <br/>
-                  <div className="col-md-3 profile">
-                      <div className="text-center">
-                        <img src={"https://s.gravatar.com/avatar/" + md5('pianiste.evo@gmail.com') + "?s=100" } className="avatar img-circle" alt="avatar"/>
-                        <h2 className="user-name">John Smith</h2>
-                        <a href="http://fr.gravatar.com/" className="form-control btn" id="btnModify">Modifier</a>
-                      </div>
-                  </div>
-                    
-                  <div className="col-md-9 personal-info">
-                    <div className="blanc">
-                      <h4>Mes informations personnelles</h4>
-                      <br/>
-                      <form className="form-horizontal" role="form" onSubmit={this.handleSubmit}>
-                        <div className="form-group">
-                          <div className="col-md-12">
-                            <label className="control-label">Pseudo</label>
-                            <input className="form-control input-lg" type="text" value="janeuser" id="pseudo" />
-                            <span id="pseudoValid" className="glyphicon pull-right"></span>
-                          </div>
-                        </div>
-                        <div className="form-group">
-                          <div className="col-md-12">
-                            <label className="control-label">Nom</label>
-                            <input className="form-control input-lg" type="text" value="Jane" id="nom" />
-                            <span id="nomValid" className="glyphicon pull-right">
-                              <i className="fa fa-user fa-lg text-white fa-custom"></i>
-                            </span>
-                          </div>
-                        </div>
-                        <div className="form-group">
-                          <div className="col-md-12">
-                            <label className="control-label">Prénom</label>
-                            <input className="form-control input-lg" type="text" value="Bishop" id="prenom"/>
-                            <span id="prenomValid" className="glyphicon pull-right"></span>
-                          </div>
-                        </div>
-                        <div className="form-group">
-                          <div className="col-md-12">
-                            <label className="control-label">Email</label>
-                            <input className="form-control input-lg" type="text" id="email" required="required" />
-                            <span id="emailValid" className="glyphicon pull-right"></span>
-                          </div>
-                        </div>
-                        <div className="form-group">
-                          <div className="col-md-12">
-                            <label className="control-label">Mot de passe</label>
-                            <input className="form-control input-lg" type="password" id="password" required="required" />
-                            <span id="passwordValid" className="glyphicon pull-right"></span>
-                          </div>
-                        </div>
-                        <div className="form-group">
-                          <div className="col-md-12">
-                            <label className="control-label">Confirmation du mot de passe</label>
-                            <input className="form-control input-lg" type="password" id="passwordConfirm" required="required" />
-                            <span id="passwordConfirmValid" className="glyphicon pull-right"></span>
-                          </div>
-                        </div>
-                        <div className="form-group text-center">
-                          <div className="col-md-12">
-                            <label className="control-label"></label>
-                            <input type="button" className="btn btn-default" id="valider" value="Sauvegarder"/> &nbsp;
-                            <span>
-                            </span>
-                            <input type="reset" className="btn btn-default" id="annuler" />
-                          </div>
-                        </div>
-                      </form>
+
+      var sidebarStyle = {
+        overflow: 'hidden',
+        outline: 'none',
+        marginLeft: '0px'
+      };
+      var displayBlockStyle = {
+        display: 'block',
+        overflow: 'hidden',
+        marginTop: '-5px!important'
+      };
+
+      var displayNoneStyle = {
+        display: 'none'
+      };
+
+      var dcjqParentCustom = {
+        color: '#2e4453'
+      };
+
+      return(
+              
+            <div className="container">
+              <div className="row">
+                <br/>
+                <div className="col-md-3 profile">
+                    <div className="text-center">
+                      <img src={"https://s.gravatar.com/avatar/" + md5(this.state.mail) + "?s=100" } className="avatar img-circle" alt="avatar"/>
+                      <h2 className="user-name">{this.state.nom +" "+ this.state.prenom}</h2>
+                      <a href="http://fr.gravatar.com/" className="form-control btn" id="btnModify">Modifier</a>
                     </div>
+                      <h2 className="sidebar-heading">Profile</h2>
+                        <ul className="sidebar-menu" id="nav-accordion" style={displayBlockStyle}>
+                          <li className="mt">
+                              <a className="active" href="javascript:;">
+                                  <i className="fa fa-dashboard"></i>
+                                  <span>Mon profil</span>
+                              </a>
+                          </li>
+                          <li className="sub-menu dcjq-parent-li dcjq-custom">
+                              <a href="javascript:;" className="dcjq-parent dcjq-custom" style={dcjqParentCustom}>
+                                  <i className="fa fa-book"></i>
+                                  <span>Documentation</span>
+                              </a>
+                          </li>
+                          <li className="sub-menu dcjq-parent-li">
+                              <a href="javascript:;" className="dcjq-parent dcjq-custom" style={dcjqParentCustom}>
+                                  <i className="fa fa-cogs"></i>
+                                  <span>Cours</span>
+                              </a>
+                          </li>
+                          <li className="sub-menu dcjq-parent-li">
+                              <a href="javascript:;" className="dcjq-parent dcjq-custom" style={dcjqParentCustom}>
+                                  <i className="fa fa-tasks"></i>
+                                  <span>Exercices</span>
+                              </a>
+                          </li>
+                          <li className="sub-menu dcjq-parent-li">
+                              <a href="javascript:;" className="dcjq-parent dcjq-custom" style={dcjqParentCustom}>
+                                  <i className=" fa fa-bar-chart-o"></i>
+                                  <span>Performances</span>
+                              </a>
+                          </li>
+                        </ul>
+                    
+                </div>
+
+
+                  
+                <div className="col-md-9 personal-info">
+                  <div className="blanc">
+                    <h4>Mes informations personnelles</h4>
+                    <br/>
+                    <form className="form-horizontal" role="form" onSubmit={this.handleSubmit}>
+                      <div className="form-group">
+                        <div className="col-md-12">
+                          <label className="control-label">Pseudo</label>
+                          <input className="form-control input-lg" type="text" defaultValue={this.state.pseudo} id="pseudo" />
+                          <span id="pseudoValid" className="glyphicon pull-right">
+                            <i className="fa fa-user fa-lg text-white fa-custom"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <div className="col-md-12">
+                          <label className="control-label">Nom</label>
+                          <input className="form-control input-lg" type="text" defaultValue={this.state.nom} id="nom" />
+                          <span id="nomValid" className="glyphicon pull-right">
+                            <i className="fa fa-user fa-lg text-white fa-custom"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <div className="col-md-12">
+                          <label className="control-label">Prénom</label>
+                          <input className="form-control input-lg" type="text" defaultValue={this.state.prenom} id="prenom"/>
+                          <span id="prenomValid" className="glyphicon pull-right">
+                            <i className="fa fa-user fa-lg text-white fa-custom"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <div className="col-md-12">
+                          <label className="control-label">Email</label>
+                          <input className="form-control input-lg" type="text" defaultValue={this.state.mail} id="email"/>
+                          <span id="emailValid" className="glyphicon pull-right">
+                            <i className="fa fa-envelope fa-lg text-white fa-custom"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <div className="col-md-12">
+                          <label className="control-label">Mot de passe</label>
+                          <input className="form-control input-lg" type="password" id="password" required="required" />
+                          <span id="passwordValid" className="glyphicon pull-right">
+                            <i className="fa fa-key fa-lg text-white fa-custom"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <div className="col-md-12">
+                          <label className="control-label">Confirmation du mot de passe</label>
+                          <input className="form-control input-lg" type="password" id="passwordConfirm" required="required" />
+                          <span id="passwordConfirmValid" className="glyphicon pull-right">                            
+                            <i className="fa fa-key fa-lg text-white fa-custom"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div className="form-group text-center">
+                        <div className="col-md-12">
+                          <label className="control-label"></label>
+                          <button type="button" className="btn btn-default" id="valider" >Sauvegarder</button> &nbsp;
+                          <span>
+                          </span>
+                          <input type="reset" className="btn btn-default" id="annuler" />
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
+            </div>
         )
     }
 });
