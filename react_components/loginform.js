@@ -11,23 +11,35 @@ module.exports = React.createClass({
         event.stopPropagation();
         event.preventDefault();
 
+        $("#login-wrap").toggle();
+        $(".sk-folding-cube").show();
+
         var password = $("#password").val();
         var email = $("#email").val();
 
+        /**For Test Only**/
         var email = "bilel.bekkouche@gmail.com";
         var password = "bekkouche99";
-
-        console.log(this.state);
+        
         if (this.state.passwordFullfiled
         && this.state.passwordFullfiled
         && password != ""
         && email != "") {
     		Authentification(email, password,  function(res,err) {
-                console.log(res);
-                console.log(err);
-                self.props.parent.setLogged();
-                localStorage.setItem('focusState', JSON.stringify({ focused : "PageHomeConnected" }));
-                ReactDOM.render(<PageHomeConnected />, document.getElementById('body'));
+                if (err == "error") {
+                    swal({
+                        title: 'Attention',
+                        text: 'Mauvais nom de connexion ou mauvais mot de passe!',
+                        type : 'error',
+                        timer: 5000
+                    });
+                    $("#login-wrap").toggle();
+                    $(".sk-folding-cube").hide();
+                } else {
+                    self.props.parent.setLogged();
+                    localStorage.setItem('focusState', JSON.stringify({ focused : "PageHomeConnected" }));
+                    ReactDOM.render(<PageHomeConnected />, document.getElementById('body'));
+                }
     		});
         } else {
             swal({
@@ -36,6 +48,8 @@ module.exports = React.createClass({
                 type : 'error',
                 timer: 5000
             });
+            $("#login-wrap").toggle();
+            $(".sk-folding-cube").hide();
         }
 
     },
@@ -49,8 +63,8 @@ module.exports = React.createClass({
 
     componentDidMount: function() {
         var self = this;
-
         var password, email;
+        $(".sk-folding-cube").hide();
         $("#password").each(function(){
             $(this).on("change", function(){
                 password = traitementVariable($(this).val(), "password", "^[a-zA-Z 0-9@_-]{4,}$");
@@ -63,7 +77,6 @@ module.exports = React.createClass({
         });
 
         function traitementVariable(variable, champs, regex){
-          //var regex = /^[a-zA-Z ]+$/;
             if(variable == ""){
                 error("le "+champs, "#"+champs, "#"+champs+"Valid" ,".form-group", ".glyphicon");
             }
@@ -87,10 +100,7 @@ module.exports = React.createClass({
                     return variable;
                 }
             }
-
-
         }
-
 
          //fonction générique d'avertissement tiré de boostrap
         function warning(name, balise, balise2, classe1, classe2){
@@ -121,7 +131,7 @@ module.exports = React.createClass({
                     <div className="container animated  fadeInUp">
                         <form className="form-login" action="index.html">
                             <h2 className="form-login-heading">Se connecter</h2>
-                            <div className="login-wrap">
+                            <div className="login-wrap" id="login-wrap">
                                 <div className="form-group">
                                     <input type="text" className="form-control" placeholder="Adresse mail ou Identifiant" id="email" autofocus="" />
                                     <span id="emailValid" className="glyphicon pull-right"></span>
@@ -149,6 +159,12 @@ module.exports = React.createClass({
                                     </span>
                                     <a className="btn btn-theme btn-link" href="./"> Retour </a>
                                 </div>
+                            </div>
+                            <div className="sk-folding-cube">
+                                <div className="sk-cube1 sk-cube"></div>
+                                <div className="sk-cube2 sk-cube"></div>
+                                <div className="sk-cube4 sk-cube"></div>
+                                <div className="sk-cube3 sk-cube"></div>
                             </div>
                         </form>
                     </div>
