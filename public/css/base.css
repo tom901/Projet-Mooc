@@ -317,9 +317,17 @@ button, input, select, textarea, input, .btn{
     width: 210px;
     height: 100%;
     position: fixed;
-    background: #2F75AD;
+    background: #333333;
 }
 
+.sidebar-hack{
+    top: 0;
+    padding-top: 50px;
+}
+.container-fluid-with-aside {
+    padding-left: 240px;
+    padding-top: 15px;
+}
 #sidebar h5 {
     color: #f2f2f2;
     font-weight: 700;
