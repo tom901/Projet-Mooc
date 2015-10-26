@@ -156,7 +156,6 @@ h6, .h6 {
     margin-bottom: 0;
 }
 
-/* Vic'sk code*/
 .modal{
     display: flex !important;
     height: 100%;
@@ -164,10 +163,7 @@ h6, .h6 {
 .modal .modal-dialog{
     margin: auto;
 }
-/* How ???...
-label{
-    text-align: right;
-}*/1
+
 /***
 HERO
 ***/
@@ -227,12 +223,15 @@ HERO
     border-radius: 0;
 }
 
+
 #hero-area-login {
     background: url('../images/hero_bg.jpg') no-repeat 50%;
     background-size: cover;
     background-attachment: fixed;
+    padding: 100px 0 350px 0;
+    color: #fff;
     position: relative;
-    padding-bottom: 300px;
+    height: 100%;
 }
 #hero-area-login:before {
     content: '';
@@ -272,7 +271,8 @@ button, input, select, textarea, input, .btn{
 /*LOGIN CONFIGURATION PAGE*/
 .form-login {
     max-width: 330px;
-    margin: 100px auto 0;
+    min-height: 330px;
+    margin: 0 auto;
     background: #fff;
     border-radius: 0px;
 }
@@ -290,6 +290,7 @@ button, input, select, textarea, input, .btn{
 }
 .login-wrap {
     padding: 20px;
+    min-height: 200px;
 }
 .login-wrap .registration {
     text-align: center;

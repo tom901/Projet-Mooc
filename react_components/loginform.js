@@ -5,7 +5,10 @@
  */
 var PageHomeConnected = require('./connected.js');
 
+var LocalStorageMixin = require('./LocalStorageMixin');
+
 module.exports = React.createClass({
+    mixins: [LocalStorageMixin],
     login : function (event) {
         var self = this;
         event.stopPropagation();
@@ -20,11 +23,11 @@ module.exports = React.createClass({
         /**For Test Only**/
         var email = "bilel.bekkouche@gmail.com";
         var password = "bekkouche99";
-        
         if (this.state.passwordFullfiled
         && this.state.passwordFullfiled
         && password != ""
         && email != "") {
+            console.log(this.myfunction);
     		Authentification(email, password,  function(res,err) {
                 if (err == "error") {
                     swal({
@@ -126,10 +129,11 @@ module.exports = React.createClass({
     },
     render : function(){
         return (
-            <div id="login-page">
+
+            <div id="dynamicHero">
                 <section id="hero-area-login">
-                    <div className="container animated  fadeInUp">
-                        <form className="form-login" action="index.html">
+                    <div className="container">
+                        <form className="form-login animated  fadeInUp">
                             <h2 className="form-login-heading">Se connecter</h2>
                             <div className="login-wrap" id="login-wrap">
                                 <div className="form-group">
@@ -142,10 +146,10 @@ module.exports = React.createClass({
                                 </div>
                                 <label className="checkbox">
                                     <span className="pull-right">
-                                        <a className="btn btn-theme btn-link" href="http://insta2.paracamplus.com//authenticate/sendlink" target="_blank"> Mot de passe oublier ?</a>
+                                        <a className="btn btn-primary btn-link" href="http://insta2.paracamplus.com//authenticate/sendlink" target="_blank"> Mot de passe oublier ?</a>
                                     </span>
                                 </label>
-                                <button className="btn btn-theme btn-block" onClick={this.login} type="submit" id="connect-btn"><i className="fa fa-lock"></i> CONNEXION </button>
+                                <button className="btn btn-primary btn-block" onClick={this.login} type="submit" id="connect-btn"><i className="fa fa-lock"></i> CONNEXION </button>
                                 <hr />
                                 <div className="centered">
                                     <p>Ou connectez vous avec un compte Google</p>
@@ -157,7 +161,7 @@ module.exports = React.createClass({
                                             <a className="btn btn-danger" href="http://insta2.paracamplus.com//openid/">Google +</a>
                                         </div>
                                     </span>
-                                    <a className="btn btn-theme btn-link" href="./"> Retour </a>
+                                    <a className="btn btn-primary btn-link" href="./"> Retour </a>
                                 </div>
                             </div>
                             <div className="sk-folding-cube">
