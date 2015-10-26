@@ -666,3 +666,10 @@ a.dcjq-custom:hover>i{
     top: 5px;
     width: 135px!important;
 }
+
+.background-table-history{
+    background-color: white;
+}
+.text-history-page{
+    font-size: 18px;
+}
