@@ -5,6 +5,11 @@
  */
 var PageHomeConnected = require('./connected.js');
 
+/**
+ * [require description]
+ * @param  {[type]} './LocalStorageMixin' [description]
+ * @return {ReactClass}                  [Composant ReactJS]
+ */
 var LocalStorageMixin = require('./LocalStorageMixin');
 
 module.exports = React.createClass({
@@ -39,14 +44,11 @@ module.exports = React.createClass({
                     $(".sk-folding-cube").hide();
                 } else if (res !== undefined){
                     self.props.parent.setLogged();
-                    console.log(res);
-
                     if ($('#rememberMe')[0].checked ){
                         self.storeMyItem('focusState', { focused : "PageHomeConnected" });
-                        console.log('#rememberMe');
                     }
                     //localStorage.setItem('focusState', JSON.stringify({ focused : "PageHomeConnected" }));
-                    ReactDOM.render(<PageHomeConnected />, document.getElementById('body'));
+                    ReactDOM.render(<PageHomeConnected userData={res} />, document.getElementById('body'));
                 }
     		});
         } else {
@@ -68,7 +70,6 @@ module.exports = React.createClass({
             emailFullfiled : true
         };
     },
-
     componentDidMount: function() {
         var self = this;
         var password, email;

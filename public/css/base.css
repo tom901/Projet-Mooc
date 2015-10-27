@@ -167,11 +167,29 @@ h6, .h6 {
 /***
 HERO
 ***/
+
+@media (min-width: 768px) {
+  #sidebar {
+    width: 75px;
+  }
+}
+@media (min-width: 992px) {
+    #hero-area {
+        padding: 15px 0 0 0;
+    }
+    #hero-area-login {
+        background: url('../images/hero_bg.jpg') no-repeat 50%;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 10px 0;
+    }
+}
+
 #hero-area {
     background: url('../images/hero_bg.jpg') no-repeat 50%;
     background-size: cover;
     background-attachment: fixed;
-    padding: 200px 0 350px 0;
+    padding: 100px 0 350px 0;
     color: #fff;
     position: relative;
     height: 100%;
