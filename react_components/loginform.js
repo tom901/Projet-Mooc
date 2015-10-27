@@ -28,6 +28,7 @@ module.exports = React.createClass({
         /**For Test Only**/
         var email = "bilel.bekkouche@gmail.com";
         var password = "bekkouche99";
+        /**             **/
         if (this.state.passwordFullfiled
         && this.state.passwordFullfiled
         && password != ""
@@ -47,7 +48,6 @@ module.exports = React.createClass({
                     if ($('#rememberMe')[0].checked ){
                         self.storeMyItem('focusState', { focused : "PageHomeConnected" });
                     }
-                    //localStorage.setItem('focusState', JSON.stringify({ focused : "PageHomeConnected" }));
                     ReactDOM.render(<PageHomeConnected userData={res} />, document.getElementById('body'));
                 }
     		});

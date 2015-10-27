@@ -1,3 +1,7 @@
+/**
+ * [LocalStorageMixin mixins d'utilisation du localstorage]
+ * @type {Object}
+ */
 var LocalStorageMixin = {
     /**
      * [storeMyItem set item into localstorage]

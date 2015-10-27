@@ -26,7 +26,6 @@ var MenuDropDown = React.createClass({
         if (! ('focused' in focusState)) {
             focusState = { focused: "PageHome" };
         }
-        //var focusState = JSON.parse(localStorage.getItem('focusState') || '{ "focused": "PageHome" }');
         if(focusState.focused != "PageHome"){
             $( "#nav-controlled" ).show();
         }
@@ -79,7 +78,6 @@ module.exports  = React.createClass({
         ReactDOM.render(<RenderComponent component = {eval(focused)} />, document.getElementById('body'));
     },
     getInitialState: function(){
-        //var focusState = JSON.parse(localStorage.getItem('focusState') || '{ "focused": "PageHome" }');
         var focusState = this.getMyItem('focusState');
         if (! ('focused' in focusState)) {
             focusState = { focused: "PageHome" };
@@ -138,5 +136,4 @@ module.exports  = React.createClass({
         this.loadContenu(nextState.focused);
         return true;
     }
-
 });
