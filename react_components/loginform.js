@@ -28,17 +28,18 @@ module.exports = React.createClass({
         && password != ""
         && email != "") {
     		Authentification(email, password,  function(res,err) {
-                if (err == "error") {
+                if (err !== undefined) {
                     swal({
                         title: 'Attention',
-                        text: 'Mauvais nom de connexion ou mauvais mot de passe!',
+                        text: 'Mauvais nom de connexion ou mauvais mot de passe! ' + err,
                         type : 'error',
                         timer: 5000
                     });
                     $("#login-wrap").toggle();
                     $(".sk-folding-cube").hide();
-                } else {
+                } else if (res !== undefined){
                     self.props.parent.setLogged();
+                    console.log(res);
 
                     if ($('#rememberMe')[0].checked ){
                         self.storeMyItem('focusState', { focused : "PageHomeConnected" });
