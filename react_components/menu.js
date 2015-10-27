@@ -14,14 +14,19 @@ var PageHomeConnected = require('./connected.js');
 
 var RenderComponent = require('./renderComponent.js');
 
+var LocalStorageMixin = require('./LocalStorageMixin');
+
 var MenuDropDown = React.createClass({
     chooseClick : function(name){
         this.props.parent.clicked(name);
     },
     componentDidMount: function(prevProps, prevState) {
         $( "#nav-controlled" ).hide();
-
-        var focusState = JSON.parse(localStorage.getItem('focusState') || '{ "focused": "PageHome" }');
+        var focusState = this.props.parent.getMyItem('focusState');
+        if (! ('focused' in focusState)) {
+            focusState = { focused: "PageHome" };
+        }
+        //var focusState = JSON.parse(localStorage.getItem('focusState') || '{ "focused": "PageHome" }');
         if(focusState.focused != "PageHome"){
             $( "#nav-controlled" ).show();
         }
@@ -61,6 +66,7 @@ var MenuClassic = React.createClass({
 });
 
 module.exports  = React.createClass({
+    mixins: [LocalStorageMixin],
     typeMenuRender : function(item){
         if(item.isDropDown){
             return <MenuDropDown index={item.index} title={item.label} subItems={item.subItems} clicked={this.clicked} parent={this} />
@@ -73,12 +79,15 @@ module.exports  = React.createClass({
         ReactDOM.render(<RenderComponent component = {eval(focused)} />, document.getElementById('body'));
     },
     getInitialState: function(){
-        var focusState = JSON.parse(localStorage.getItem('focusState') || '{ "focused": "PageHome" }');
+        //var focusState = JSON.parse(localStorage.getItem('focusState') || '{ "focused": "PageHome" }');
+        var focusState = this.getMyItem('focusState');
+        if (! ('focused' in focusState)) {
+            focusState = { focused: "PageHome" };
+        }
         if(focusState.focused != "PageHome"){
             $( "#nav-controlled" ).show();
         }
         return focusState;
-
     },
     dateToday : function(){
         var dt = new Date();

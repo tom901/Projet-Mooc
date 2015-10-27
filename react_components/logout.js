@@ -1,6 +1,13 @@
+/**
+ * [LocalStorageMixin Mixin for localstorage]
+ */
+ var LocalStorageMixin = require('./LocalStorageMixin');
+
+
  module.exports = React.createClass({
-	render : function(){
-        localStorage.removeItem('focusState');
-		return window.location.reload();
-	}
+     mixins: [LocalStorageMixin],
+     render : function(){
+         this.deleteMyItem('focusState');
+         return window.location.reload();
+     }
 });

@@ -717,3 +717,9 @@ a.dcjq-custom:hover>i{
         opacity: 0;
     }
 }
+
+.checkbox-txt{
+    color: #000000;
+    font-size: 11px;
+    line-height: 20px;
+}

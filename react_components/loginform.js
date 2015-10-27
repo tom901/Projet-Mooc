@@ -27,7 +27,6 @@ module.exports = React.createClass({
         && this.state.passwordFullfiled
         && password != ""
         && email != "") {
-            console.log(this.myfunction);
     		Authentification(email, password,  function(res,err) {
                 if (err == "error") {
                     swal({
@@ -40,7 +39,12 @@ module.exports = React.createClass({
                     $(".sk-folding-cube").hide();
                 } else {
                     self.props.parent.setLogged();
-                    localStorage.setItem('focusState', JSON.stringify({ focused : "PageHomeConnected" }));
+
+                    if ($('#rememberMe')[0].checked ){
+                        self.storeMyItem('focusState', { focused : "PageHomeConnected" });
+                        console.log('#rememberMe');
+                    }
+                    //localStorage.setItem('focusState', JSON.stringify({ focused : "PageHomeConnected" }));
                     ReactDOM.render(<PageHomeConnected />, document.getElementById('body'));
                 }
     		});
@@ -121,7 +125,6 @@ module.exports = React.createClass({
 
         //fonction générique de succès tiré de boostrap
         function success(name, balise, balise2, classe1,classe2){
-            // $("#errorForm").html("<em>"+name+" envoy&eacute; avec succ&egrave;s ! </em>");
             $(balise).closest(classe1).removeClass('has-error has-feedback').removeClass('has-warning has-feedback').addClass('has-success has-feedback');
             $(balise2).closest(classe2).removeClass('glyphicon-remove form-control-feedback').removeClass('glyphicon-warning-sign form-control-feedback').addClass('glyphicon-ok form-control-feedback');
         }
@@ -149,6 +152,12 @@ module.exports = React.createClass({
                                         <a className="btn btn-primary btn-link" href="http://insta2.paracamplus.com//authenticate/sendlink" target="_blank"> Mot de passe oublier ?</a>
                                     </span>
                                 </label>
+                                <div className="checkbox">
+                                    <label className="checkbox-txt">
+                                        <input type="checkbox" name="remember" id="rememberMe" value="true"/> Se souvenir de moi
+                                    </label>
+                                </div>
+                                <hr />
                                 <button className="btn btn-primary btn-block" onClick={this.login} type="submit" id="connect-btn"><i className="fa fa-lock"></i> CONNEXION </button>
                                 <hr />
                                 <div className="centered">
