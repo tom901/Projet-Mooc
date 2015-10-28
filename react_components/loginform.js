@@ -134,7 +134,6 @@ module.exports = React.createClass({
     },
     render : function(){
         return (
-
             <div id="dynamicHero">
                 <section id="hero-area-login">
                     <div className="container">
