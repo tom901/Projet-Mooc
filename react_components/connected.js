@@ -39,11 +39,10 @@ module.exports = React.createClass({
             display: 'none'
         };
         var self = this;
-        console.log(self.state);
         return (
             <div>
                 <aside>
-                    <div id="sidebar" className="nav-collapse sidebar-hack" style={sidebarStyle}>
+                    <div id="sidebar" className="nav-collapse sidebar-hack animated bounceInLeft" style={sidebarStyle}>
                         <ul className="sidebar-menu" id="nav-accordion" style={displayBlockStyle}>
                             <p className="centered">
                                 <a href="#">
@@ -84,7 +83,7 @@ module.exports = React.createClass({
                         </ul>
                     </div>
                 </aside>
-                <div className="container-fluid container-fluid-with-aside">
+                <div className="container-fluid container-fluid-with-aside animated fadeIn">
                     <div className="tab-content">
                         <div role="tabpanel" className="tab-pane fade in active" id="home">
                             <div className="row text-center">
