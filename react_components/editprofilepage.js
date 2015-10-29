@@ -211,18 +211,6 @@ module.exports  = React.createClass({
                                   <span>Mon profil</span>
                               </a>
                           </li>
-                          <li className="sub-menu dcjq-parent-li dcjq-custom">
-                              <a href="javascript:;" className="dcjq-parent dcjq-custom" style={dcjqParentCustom}>
-                                  <i className="fa fa-book"></i>
-                                  <span>Documentation</span>
-                              </a>
-                          </li>
-                          <li className="sub-menu dcjq-parent-li">
-                              <a href="javascript:;" className="dcjq-parent dcjq-custom" style={dcjqParentCustom}>
-                                  <i className="fa fa-cogs"></i>
-                                  <span>Cours</span>
-                              </a>
-                          </li>
                           <li className="sub-menu dcjq-parent-li">
                               <a href="javascript:;" className="dcjq-parent dcjq-custom" style={dcjqParentCustom}>
                                   <i className="fa fa-tasks"></i>
