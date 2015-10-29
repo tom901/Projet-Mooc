@@ -225,8 +225,7 @@ HERO
     font-family: 'Roboto', sans-serif;
     margin-top: 25px;
 }
-#hero-area .btn {
-    background: #414141;
+#hero-area .btn-lines {
     border: none;
     color: #fff;
     padding: 20px 35px;
@@ -240,7 +239,9 @@ HERO
     letter-spacing: normal;
     border-radius: 0;
 }
-
+.btn-dark{
+    background: #414141;
+}
 
 #hero-area-login {
     background: url('../images/hero_bg.jpg') no-repeat 50%;
@@ -375,14 +376,17 @@ button, input, select, textarea, input, .btn{
 ul.sidebar-menu , ul.sidebar-menu li ul.sub{
     margin: -2px 0 0;
     padding: 0;
+    list-style-type: none;
 }
 
 ul.sidebar-menu {
     margin-top: 15px;
+    list-style-type: none;
 }
 
 #sidebar > ul > li > ul.sub {
     display: none;
+    list-style-type: none;
 }
 
 #sidebar > ul > li.active > ul.sub, #sidebar > ul > li > ul.sub > li > a {
@@ -499,14 +503,22 @@ ul.sidebar-menu li a.active i {
 }
 .hero-feature > .thumbnail {
     margin-bottom: 30px;
-    min-height: 250px;
+    min-height: 320px;
 }
 
 .titleExercices{
     display: block;
-    min-height:70px;
+    height:60px;
+    overflow-y: auto;
+    font-size: 14px;
+    font-weight: bold;
 }
-
+.prologueexos{
+    display: block;
+    height:80px;
+    overflow-y: auto;
+    font-size: 14px;
+}
 footer {
     margin: 50px 0;
 }
@@ -758,4 +770,15 @@ a.dcjq-custom:hover>i{
     color: #000000;
     font-size: 11px;
     line-height: 20px;
+}
+.black-color{
+    color: #000000;
+}
+.transparent-bg{
+    background-color: transparent;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }

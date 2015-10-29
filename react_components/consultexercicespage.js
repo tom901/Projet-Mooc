@@ -3,22 +3,52 @@ var StartExercice = require('./commencerExercices.js');
 /** Composant Exercice
 Fonction : permet d'afficher la mise en page d'un exercice
 */
-
 var Exercice = React.createClass({
+    loadSubExerciceView : function () {
+        var self = this;
+        this.props.parent.setState({exolist : this.props.data.exercices });
+        //ReactDOM.render(<ListExercices value={this.props.data}  />, document.getElementById('exerciceArea'));
+    },
     loadStartExerciceView : function () {
-        ReactDOM.render(<StartExercice />, document.getElementById('body'));
+        var self = this;
+        ReactDOM.render(<StartExercice data={self.props.data}/>, document.getElementById('body'));
+    },
+    diplayTitle : function () {
+        var self = this;
+        var title = 'Aucun titre';
+        if ('title' in self.props && self.props.title !== undefined) {
+            title = self.props.title;
+        }else if ('summary' in self.props.data) {
+            title = self.props.data.summary;
+        }
+        return title;
+    },
+    getPrologue : function () {
+        var self = this;
+        var prologue = 'Pas de descriptif ... Soyez curieux :)';
+        if ('prologue' in self.props.data && self.props.data.prologue != "") {
+            prologue = self.props.data.prologue;
+        }
+        return prologue;
     },
     render: function() {
         var self = this;
         return (
-            <div className="col-md-3 col-sm-6 hero-feature">
+            <div className="col-md-3 col-sm-6 hero-feature animated fadeIn">
                 <div className="thumbnail">
                     <img className="logoExercices" src="./images/Logo-Paracamplus_noir.png" alt="" />
                     <div className="caption">
-                        <h3 className="titleExercices">{this.props.title}</h3>
+                        <h4 className="titleExercices">
+                            <div dangerouslySetInnerHTML={{__html: this.diplayTitle()}} />
+                        </h4>
+                        <hr />
+                        <div className="prologueexos"><small>{this.getPrologue()}</small></div>
                         <hr />
                         <p>
-                            <a onClick={self.loadStartExerciceView} className="btn btn-primary">{"Voir les exercices"}</a>
+                            <a onClick={('exercices' in this.props.data) ? self.loadSubExerciceView : self.loadStartExerciceView }
+                                className="btn btn-primary">
+                                {('exercices' in this.props.data) ? "Voir le thème" : "Voir l'exercice"}
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -33,13 +63,14 @@ Fonction :
 - on ajouter ces données dans les propriétés du composant 'Exercice'
 */
 var ListExercices = React.createClass({
+
     render: function() {
         var self = this;
         return (
             <div className="">
                 {
-                    this.props.value.map(function (comment, index) {
-                        return <Exercice title={comment.title} key={index}/>;
+                    this.props.value.map(function (item, index) {
+                        return <Exercice title={item.title} key={index} data={item} parent={self.props.parentDate}/>;
                     })
                 }
             </div>
@@ -54,6 +85,18 @@ Fonction :
 - on ajoute le composant ListExercices
 */
 module.exports = React.createClass({
+    spinner : function (exercicesArray) {
+        if (exercicesArray.length < 1) {
+            return (
+                <div className="sk-folding-cube">
+                    <div className="sk-cube1 sk-cube"></div>
+                    <div className="sk-cube2 sk-cube"></div>
+                    <div className="sk-cube4 sk-cube"></div>
+                    <div className="sk-cube3 sk-cube"></div>
+                </div>
+            )
+        }
+    },
     getInitialState:function (){
         return{exolist :  []}
     },
@@ -71,6 +114,7 @@ module.exports = React.createClass({
         for (var i = 0; i < this.state.exolist.length; i++) {
             exercicesArray.push(this.state.exolist[i]);
         }
+        // console.log(exercicesArray);
         return (
             <div className="container">
                 <div className="row with-padding-top">
@@ -79,8 +123,9 @@ module.exports = React.createClass({
                         <hr />
                     </div>
                 </div>
-                <div className="row text-center">
-                    <ListExercices value={exercicesArray}  />
+                <div className="row text-center" id='exerciceArea'>
+                    {self.spinner(exercicesArray)}
+                    <ListExercices value={exercicesArray}  parentDate={self}/>
                 </div>
                 <hr />
             </div>

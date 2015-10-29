@@ -4,13 +4,33 @@ require('brace/mode/javascript')
 require('brace/theme/monokai')
 
  module.exports = React.createClass({
-    updateCode : function (newValue) {
-  		console.log('change',newValue)
-	},	
-	render : function(){ 
+	render : function(){
 		var options = {
             lineNumbers: true
         };
+        var fake = "";
+        fake += "function Point (x , y) { \n";
+        fake += "  this.x = x; \n";
+        fake += "  this.y = y; \n";
+        fake += "} \n\n";
+        fake += "ColoredPoint = function (x, y, color) { \n";
+        fake += "  Point.call(this, x, y, color); \n";
+        fake += "  this.color = color; \n";
+        fake += "} \n\n";
+        fake += "ColoredPoint.prototype = Object.create(Point.prototype); \n\n";
+        fake += "ColoredPoint.prototype.constructor = ColoredPoint; \n\n";
+        fake += "Point.prototype.toString = function () { \n";
+        fake += "  return 'Point{ x='+this.x+' y='+this.y+' }'; \n";
+        fake += "}; \n\n";
+        fake += "ColoredPoint.prototype.toString = function () { \n";
+        fake += "  return 'ColoredPoint{ x='+this.x+' y='+this.y+' color='+this.color+' }'; \n";
+        fake += "}; \n\n";
+        fake += "Point.prototype.colorize = function (color) { \n";
+        fake += "  Object.setPrototypeOf(this, ColoredPoint.prototype); \n";
+        fake += "  this.constructor = ColoredPoint; \n";
+        fake += "  this.color = color; \n";
+        fake += "  return this; \n";
+        fake += "}; \n";
 		return (
 			<div className="container">
 				<br/>
@@ -21,18 +41,19 @@ require('brace/theme/monokai')
 				<AceEditor
 				    mode="javascript"
 				    theme="monokai"
-				    onChange={this.updateCode}
 				    name="UNIQUE_ID_OF_DIV"
 				    editorProps={{$blockScrolling: true}}
 				    width = "100%"
 				    fontSize = {16}
+                    readOnly = {true}
+                    value = {fake}
 				/>
 				<br/>
 				<p>Je vérifie votre code avec mes tests.</p>
 				<br/>
 				<p>J'obtiens : </p>
 				<p> Voici ce qu'a vérifié la correction automatisée:</p>
-				<ul> 
+				<ul>
 					<li> Je vais évaluer votre code. </li>
 					<li> Votre code s'évalue correctement. </li>
 					<li> Je vais tourner votre code avec mes tests </li>

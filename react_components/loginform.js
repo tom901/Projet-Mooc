@@ -26,8 +26,8 @@ module.exports = React.createClass({
         var email = $("#email").val();
 
         /**For Test Only**/
-        var email = "bilel.bekkouche@gmail.com";
-        var password = "bekkouche99";
+        // var email = "bilel.bekkouche@gmail.com";
+        // var password = "bekkouche99";
         /**             **/
         if (this.state.passwordFullfiled
         && this.state.passwordFullfiled
@@ -158,11 +158,12 @@ module.exports = React.createClass({
                                         <input type="checkbox" name="remember" id="rememberMe" value="true"/> Se souvenir de moi
                                     </label>
                                 </div>
+                                <div className="clearfix"></div>
                                 <hr />
                                 <button className="btn btn-primary btn-block" onClick={this.login} type="submit" id="connect-btn"><i className="fa fa-lock"></i> CONNEXION </button>
                                 <hr />
                                 <div className="centered">
-                                    <p>Ou connectez vous avec un compte Google</p>
+                                    <p className="black-color"><small>Ou connectez vous avec un compte Google</small></p>
                                     <span className="pull-right">
                                         <div className="btn-group">
                                             <a href="http://insta2.paracamplus.com//openid/" className="btn btn-danger" >
