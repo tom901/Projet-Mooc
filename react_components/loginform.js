@@ -37,7 +37,7 @@ module.exports = React.createClass({
                 if (err !== undefined) {
                     swal({
                         title: 'Attention',
-                        text: 'Mauvais nom de connexion ou mauvais mot de passe! ' + err,
+                        text: 'Mauvais nom de connexion ou mauvais mot de passe! ',
                         type : 'error',
                         timer: 5000
                     });
